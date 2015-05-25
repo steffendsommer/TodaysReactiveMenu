@@ -1,4 +1,4 @@
-![image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true =350x65)
+![image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true =360x80)
 ***
 Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 3.0 beta 4** using the **MVVM** pattern and **Swift 1.2**.
 
