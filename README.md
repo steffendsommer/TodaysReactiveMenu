@@ -17,7 +17,7 @@ ReactiveCocoa 3 is, at the time of writing, still very new and because of that, 
  - [This](http://nomothetis.svbtle.com/an-introduction-to-reactivecocoa) and [this](http://nomothetis.svbtle.com/reactivecocoa-ii-reacting-to-signals) post by Alexandros Salazar
  - The [reactivecocoa-3](http://stackoverflow.com/questions/tagged/reactive-cocoa-3) tag on SO
 
-## Contributing or questions?
+## Contribution and questions
 Feel free to open an issue or ping me at [@steffendsommer](http://twitter.com/steffendsommer) if you have any questions. I'm fully aware that I took some corners and that I'm far from comfortable with RAC3 yet, so any useful PR's are more than welcome.
 
 
