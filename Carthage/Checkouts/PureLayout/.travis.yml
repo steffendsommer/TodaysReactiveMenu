@@ -1,0 +1,14 @@
+sudo: false
+language: objective-c
+xcode_project: PureLayout/PureLayout.xcodeproj
+matrix:
+  include:
+    - xcode_sdk: iphonesimulator
+      xcode_scheme: PureLayout_iOS
+    - xcode_sdk: macosx
+      xcode_scheme: PureLayout_Mac
+
+before_install:
+  - gem install slather --no-ri --no-rdoc
+
+after_success: slather

@@ -1,0 +1,6 @@
+framework module PureLayout_iOS {
+  umbrella header "PureLayout_iOS.h"
+
+  export *
+  module * { export * }
+}
