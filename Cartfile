@@ -1,5 +1,5 @@
 # RAC 3.x beta
-github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.4"
+github "ReactiveCocoa/ReactiveCocoa" "v3.0-beta.6"
 
 # PureLayout - AutoLayout wrapper
 github "smileyborg/PureLayout" ~> 2.0
