@@ -1,5 +1,5 @@
 ![Headline image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true =728x130)
-***
+
 Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 3.0 beta 6** using the **MVVM** pattern and **Swift 1.2**.
 
 Along with the app, a blog post has been created explaining the process. The post can be found here: *coming soon*.
