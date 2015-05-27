@@ -8,34 +8,16 @@
 
 import ReactiveCocoa
 import ObjectMapper
+import Result
 
-class MenuService {
-
-    class func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
-    
-        let session = NSURLSession.sharedSession()
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://unwire-menu.herokuapp.com/menus?limit=1")!)
-    
-        func parseJSON(signalProducer: SignalProducer<(NSData, NSURLResponse), NSError>) -> SignalProducer<Menu?, NSError> {
-            return signalProducer
-                |> map { (data, response) in
-                    var parseError: NSError?
-                    if let jsonDict = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &parseError)![0] as? NSDictionary {
-                        if parseError == nil {
-                            let menu = Mapper<Menu>().map(jsonDict)
-                            return menu
-                        } else {
-                            return nil
-                        }
-                    } else {
-                        return nil
-                    }
-            }
-        }
-    
-        return session.rac_dataWithRequest(request)
-            |> parseJSON
-        
-    }
-    
+func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
+  
+  let session = NSURLSession.sharedSession()
+  let request = NSURLRequest(URL: NSURL(string: "http://unwire-menu.herokuapp.com/menus?limit=1")!)
+  
+  return session.rac_dataWithRequest(request)
+    |> map { data, response in
+      let json = try { (NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) as? [NSDictionary])?.first }
+      return Mapper<Menu>().map(json.value)
+  }
 }
