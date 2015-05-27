@@ -1,6 +1,0 @@
-framework module PureLayout_Mac {
-  umbrella header "PureLayout_Mac.h"
-
-  export *
-  module * { export * }
-}

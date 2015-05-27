@@ -55,7 +55,7 @@ class TodaysMenuViewModel: NSObject {
         
         // Handle fetching of menu.
         // Initially fetch the menu.
-        var fetchedMenu = MenuService.fetchTodaysMenu()
+        let fetchedMenu = fetchTodaysMenu()
             |> on(error: { _ in
                 // TODO: Make this more declarative.
                 self.mainCourse.put("The chef made an unfortunate mistake while getting Today's Menu. Please come back later.")
