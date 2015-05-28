@@ -12,16 +12,16 @@ import ReactiveCocoa
 
 class TodaysMenuViewController: UIViewController {
 
-    private var viewModel       = TodaysMenuViewModel()
-    private var mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
+    private let viewModel       = TodaysMenuViewModel()
+    private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
 
-    private var headline        = UILabel()
-    private var subHeadline     = UILabel()
-    private var mainCourse      = UILabel()
-    private var logo            = UIImageView()
-    private var sides           = UILabel()
-    private var cakeDayBanner   = UIView()
-    private var cakeDayText     = UILabel()
+    private let headline        = UILabel()
+    private let subHeadline     = UILabel()
+    private let mainCourse      = UILabel()
+    private let logo            = UIImageView()
+    private let sides           = UILabel()
+    private let cakeDayBanner   = UIView()
+    private let cakeDayText     = UILabel()
 
 
     // MARK: - View Life Cycle

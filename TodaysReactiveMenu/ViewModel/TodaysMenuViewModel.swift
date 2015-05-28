@@ -12,17 +12,17 @@ import ReactiveCocoa
 
 class TodaysMenuViewModel: NSObject {
     
-    private var viewIsActive = MutableProperty<Bool>(false)
+    private let viewIsActive = MutableProperty<Bool>(false)
     
-    private var menu         = MutableProperty<Menu?>(nil)
-    var headline             = ConstantProperty<String>("Today's Menu")
-    var subHeadline          = ConstantProperty<String>("at\nUnwire")
-    var mainCourse           = MutableProperty("Please sit tight while the chef gets Today's Menu..")
-    var logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
-    var sides                = MutableProperty<String>("")
-    var cake                 = ConstantProperty<String>("CAKE DAY")
-    var hideCakeBanner       = MutableProperty<Bool>(true)
-    var hideMenu             = MutableProperty<Bool>(true)
+    private let menu         = MutableProperty<Menu?>(nil)
+    let headline             = ConstantProperty<String>("Today's Menu")
+    let subHeadline          = ConstantProperty<String>("at\nUnwire")
+    let mainCourse           = MutableProperty("Please sit tight while the chef gets Today's Menu..")
+    let logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
+    let sides                = MutableProperty<String>("")
+    let cake                 = ConstantProperty<String>("CAKE DAY")
+    let hideCakeBanner       = MutableProperty<Bool>(true)
+    let hideMenu             = MutableProperty<Bool>(true)
     
     
     // MARK: Object Life Cycle -
