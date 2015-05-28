@@ -80,13 +80,13 @@ class TodaysMenuViewModel: NSObject {
         self.hideMenu <~ self.menu.producer
             |> ignoreNil
             |> map { menu in
-                !NSCalendar.currentCalendar().isDateInToday(menu!.servedAt!)
+                !NSCalendar.currentCalendar().isDateInToday(menu.servedAt!)
             }
     
         let fetchedMainCourse = self.menu.producer
             |> ignoreNil
             |> map { menu in
-                menu!.mainCourse!
+                menu.mainCourse!
             }
         
         let menuReadyNotice = self.hideMenu.producer
@@ -102,14 +102,14 @@ class TodaysMenuViewModel: NSObject {
         self.sides <~ self.menu.producer
             |> ignoreNil
             |> map { menu in
-                menu!.sides!
+                menu.sides!
             }
         
         // Handle the showing of the cake banner.
         let anyCake = self.menu.producer
             |> ignoreNil
             |> map { menu in
-                !menu!.cake!
+                !menu.cake!
             }
         
         self.hideCakeBanner <~ combineLatest(self.hideMenu.producer, anyCake)

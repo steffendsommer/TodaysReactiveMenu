@@ -8,15 +8,6 @@
 
 import ReactiveCocoa
 
-
-public func ignoreNil<T: AnyObject, E: Any>(signalProducer: SignalProducer<T?, E>) -> SignalProducer<T?, E> {
-	return signalProducer
-        |> filter { value in
-            value != nil
-        }
-}
-
-public func ignoreError<T: Any, E: ErrorType>(signalProducer: SignalProducer<T, E>) -> SignalProducer<T, NoError> {
 public func ignoreError<T, E>(signalProducer: SignalProducer<T, E>) -> SignalProducer<T, NoError> {
     return signalProducer
         |> catch { _ in
