@@ -12,17 +12,17 @@ import ReactiveCocoa
 
 class TodaysMenuViewModel: NSObject {
     
-    private var viewIsActive = MutableProperty<Bool>(false)
+    private let viewIsActive = MutableProperty<Bool>(false)
     
-    private var menu         = MutableProperty<Menu?>(nil)
-    var headline             = ConstantProperty<String>("Today's Menu")
-    var subHeadline          = ConstantProperty<String>("at\nUnwire")
-    var mainCourse           = MutableProperty("Please sit tight while the chef gets Today's Menu..")
-    var logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
-    var sides                = MutableProperty<String>("")
-    var cake                 = ConstantProperty<String>("CAKE DAY")
-    var hideCakeBanner       = MutableProperty<Bool>(true)
-    var hideMenu             = MutableProperty<Bool>(true)
+    private let menu         = MutableProperty<Menu?>(nil)
+    let headline             = ConstantProperty<String>("Today's Menu")
+    let subHeadline          = ConstantProperty<String>("at\nUnwire")
+    let mainCourse           = MutableProperty("Please sit tight while the chef gets Today's Menu..")
+    let logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
+    let sides                = MutableProperty<String>("")
+    let cake                 = ConstantProperty<String>("CAKE DAY")
+    let hideCakeBanner       = MutableProperty<Bool>(true)
+    let hideMenu             = MutableProperty<Bool>(true)
     
     
     // MARK: Object Life Cycle -
@@ -80,13 +80,13 @@ class TodaysMenuViewModel: NSObject {
         self.hideMenu <~ self.menu.producer
             |> ignoreNil
             |> map { menu in
-                !NSCalendar.currentCalendar().isDateInToday(menu!.servedAt!)
+                !NSCalendar.currentCalendar().isDateInToday(menu.servedAt!)
             }
     
         let fetchedMainCourse = self.menu.producer
             |> ignoreNil
             |> map { menu in
-                menu!.mainCourse!
+                menu.mainCourse!
             }
         
         let menuReadyNotice = self.hideMenu.producer
@@ -102,14 +102,14 @@ class TodaysMenuViewModel: NSObject {
         self.sides <~ self.menu.producer
             |> ignoreNil
             |> map { menu in
-                menu!.sides!
+                menu.sides!
             }
         
         // Handle the showing of the cake banner.
         let anyCake = self.menu.producer
             |> ignoreNil
             |> map { menu in
-                !menu!.cake!
+                !menu.cake!
             }
         
         self.hideCakeBanner <~ combineLatest(self.hideMenu.producer, anyCake)
