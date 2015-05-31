@@ -102,7 +102,7 @@ class TodaysMenuViewModel: NSObject {
         let anyCake = self.menu.producer
             |> ignoreNil
             |> map { menu in
-                !menu.cake!
+                menu.cake!
             }
         
         self.hideCakeBanner <~ combineLatest(self.hideMenu.producer, anyCake)
