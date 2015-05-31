@@ -53,28 +53,21 @@ class TodaysMenuViewModel: NSObject {
         
         self.viewIsActive <~ merge([active, inactive])
         
-        // Handle fetching of menu.
-        // Initially fetch the menu.
-        let fetchedMenu = fetchTodaysMenu()
-            |> on(error: { _ in
-                // TODO: Make this more declarative.
-                self.mainCourse.put("The chef made an unfortunate mistake while getting Today's Menu. Please come back later.")
-            })
-        
-        // Fetch the menu every time the view gets active - skipping the first time as it has already been downloaded.
-        self.viewIsActive.producer
+        // Handle fetching of menu by fetching it every time the view gets active.
+        self.menu <~ self.viewIsActive.producer
             |> filter { isActive in
                 return isActive
             }
-            |> skip(1)
-            |> start(next: { _ in
-                // TODO: Make this more declarative.
-                fetchedMenu |> start()
-            })
-        
-        self.menu <~ fetchedMenu
+            |> flatMap(FlattenStrategy.Latest) { _ in
+                return fetchTodaysMenu()
+                    |> observeOn(QueueScheduler.mainQueueScheduler)
+                    |> on(error: { _ in
+                        // TODO: Make this more declarative.
+                        self.hideMenu.put(true)
+                    })
+                    |> ignoreError
+            }
             |> observeOn(QueueScheduler.mainQueueScheduler)
-            |> ignoreError
     
         // Make sure, we're only showing the menu when it's actually the menu of today.
         self.hideMenu <~ self.menu.producer
