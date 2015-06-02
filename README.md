@@ -2,7 +2,7 @@
 
 Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 3.0 beta 6** using the **MVVM** pattern and **Swift 1.2**.
 
-Along with the app, a blog post has been created explaining the process. The post can be found here: *coming soon*.
+Along with the app, a blog post has been created explaining the process. The post can be found here: [http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/).
 
 PS: Sorry, for the menu being in Danish. The lunch provider at my work only publishes the menu in Danish :)
 
