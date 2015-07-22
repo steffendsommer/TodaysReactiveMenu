@@ -17,7 +17,7 @@ class TodaysMenuViewModel: NSObject {
     private let menu         = MutableProperty<Menu?>(nil)
     let headline             = ConstantProperty<String>("Today's Menu")
     let subHeadline          = ConstantProperty<String>("at\nUnwire")
-    let mainCourse           = MutableProperty("Please sit tight while the chef gets Today's Menu..")
+    let mainCourse           = MutableProperty("")
     let logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
     let sides                = MutableProperty<String>("")
     let cake                 = ConstantProperty<String>("CAKE DAY")
@@ -58,16 +58,16 @@ class TodaysMenuViewModel: NSObject {
             |> filter { isActive in
                 return isActive
             }
-            |> flatMap(FlattenStrategy.Latest) { _ in
+            |> flatMap(.Latest) { _ in
                 return fetchTodaysMenu()
-                    |> observeOn(QueueScheduler.mainQueueScheduler)
+                    |> observeOn(UIScheduler())
                     |> on(error: { _ in
                         // TODO: Make this more declarative.
                         self.hideMenu.put(true)
                     })
                     |> ignoreError
             }
-            |> observeOn(QueueScheduler.mainQueueScheduler)
+            |> observeOn(UIScheduler())
     
         // Make sure, we're only showing the menu when it's actually the menu of today.
         self.hideMenu <~ self.menu.producer
@@ -83,6 +83,7 @@ class TodaysMenuViewModel: NSObject {
             }
         
         let menuReadyNotice = self.hideMenu.producer
+            |> skip(1) // as `hideMenu` will be initially true.
             |> filter { shouldHide in
                 shouldHide
             }
