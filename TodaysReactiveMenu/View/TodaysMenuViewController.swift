@@ -10,8 +10,12 @@ import UIKit
 import PureLayout_iOS
 import ReactiveCocoa
 
+
+
+
 class TodaysMenuViewController: UIViewController {
 
+    private let GAScreenName    = "TodaysMenuViewController"
     private let viewModel       = TodaysMenuViewModel()
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
 
@@ -45,6 +49,14 @@ class TodaysMenuViewController: UIViewController {
         self.cakeDayBanner.addSubview(self.cakeDayText)
 
         setupConstraints()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        var tracker = GAI.sharedInstance().defaultTracker
+        tracker.set(kGAIScreenName, value: self.GAScreenName)
+
+        var builder = GAIDictionaryBuilder.createScreenView()
+        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
 
