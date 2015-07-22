@@ -13,7 +13,7 @@ import Result
 func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
   
   let session = NSURLSession.sharedSession()
-  let request = NSURLRequest(URL: NSURL(string: "http://unwire-menu.herokuapp.com/menus?limit=1")!)
+  let request = NSURLRequest(URL: NSURL(string: "https://unwire-menu.herokuapp.com/menus?limit=1")!)
   
   return session.rac_dataWithRequest(request)
     |> map { data, response in
