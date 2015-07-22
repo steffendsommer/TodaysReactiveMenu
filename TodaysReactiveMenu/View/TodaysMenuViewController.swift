@@ -30,7 +30,7 @@ class TodaysMenuViewController: UIViewController {
         super.viewDidLoad()
         
         // Setup RAC bindings.
-        setupBindings();
+        setupBindings()
     }
 
     override func loadView() {
