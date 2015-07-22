@@ -1,13 +1,13 @@
 ![Headline image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true =728x130)
 
-Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 3.0 beta 6** using the **MVVM** pattern and **Swift 1.2**.
+Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 3.0 RC-1** using the **MVVM** pattern and **Swift 1.2**.
 
 Along with the app, a blog post has been created explaining the process. The post can be found here: [http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/).
 
 PS: Sorry, for the menu being in Danish. The lunch provider at my work only publishes the menu in Danish :)
 
 ## Setup
-The app uses **Carthage** for handling third-party dependencies. To build the app, simply clone the repository, then run `carthage update`, the dependencies will be built as frameworks in the `Carthage/Build` folder (the Xcode project will link to that folder). Carthage itself is easy to install, just download the latest `Carthage.pkg` file from the repo. [Carthage's guide](https://github.com/Carthage/Carthage) contains full instructions.
+The app uses **Carthage** AND **CocoaPods** for handling third-party dependencies. To build the app, simply clone the repository, then both run `carthage update` and `pod install`.
 
 ## Useful resources
 ReactiveCocoa 3 is, at the time of writing, still very new and because of that, the resources are limited. Here are some good places to get you started:
