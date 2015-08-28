@@ -22,8 +22,8 @@ class Menu: Mappable {
     
     // MARK: Object Life Cycle -
    
-    required init?(_ map: Map) {
-        mapping(map)
+    class func newInstance(map: Map) -> Mappable? {
+        return Menu()
     }
 
     

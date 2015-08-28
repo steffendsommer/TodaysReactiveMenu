@@ -7,10 +7,8 @@
 //
 
 import UIKit
-import PureLayout_iOS
+import PureLayout
 import ReactiveCocoa
-
-
 
 
 class TodaysMenuViewController: UIViewController {

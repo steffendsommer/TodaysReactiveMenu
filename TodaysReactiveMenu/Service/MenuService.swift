@@ -10,6 +10,7 @@ import ReactiveCocoa
 import ObjectMapper
 import Result
 
+
 func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
   
   let session = NSURLSession.sharedSession()
