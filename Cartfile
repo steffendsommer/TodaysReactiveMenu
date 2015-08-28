@@ -1,8 +1,0 @@
-# RAC 3.x beta
-github "ReactiveCocoa/ReactiveCocoa" "v3.0-RC.1"
-
-# PureLayout - AutoLayout wrapper
-github "smileyborg/PureLayout" ~> 2.0
-
-# Object mapping
-github "Hearst-DD/ObjectMapper" ~> 0.12

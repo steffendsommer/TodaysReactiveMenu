@@ -18,16 +18,6 @@
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
 		3AB0EE991B120DCD0065C13F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE971B120DCD0065C13F /* LaunchScreen.xib */; };
 		3AB0EEA51B120DCD0065C13F /* TodaysReactiveMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */; };
-		3AB0EEBE1B120FA20065C13F /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB41B120F970065C13F /* Box.framework */; };
-		3AB0EEBF1B120FA20065C13F /* Box.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB41B120F970065C13F /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AB0EEC01B120FA20065C13F /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB51B120F970065C13F /* ObjectMapper.framework */; };
-		3AB0EEC11B120FA20065C13F /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB51B120F970065C13F /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AB0EEC21B120FA20065C13F /* PureLayout_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB61B120F970065C13F /* PureLayout_iOS.framework */; };
-		3AB0EEC31B120FA20065C13F /* PureLayout_iOS.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB61B120F970065C13F /* PureLayout_iOS.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AB0EEC41B120FA20065C13F /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB71B120F970065C13F /* ReactiveCocoa.framework */; };
-		3AB0EEC51B120FA20065C13F /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB71B120F970065C13F /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3AB0EEC61B120FA20065C13F /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB81B120F970065C13F /* Result.framework */; };
-		3AB0EEC71B120FA20065C13F /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB0EEB81B120F970065C13F /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7A5EA7023CBFD69ACFB95BFD /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,11 +38,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3AB0EEC31B120FA20065C13F /* PureLayout_iOS.framework in Embed Frameworks */,
-				3AB0EEC11B120FA20065C13F /* ObjectMapper.framework in Embed Frameworks */,
-				3AB0EEC71B120FA20065C13F /* Result.framework in Embed Frameworks */,
-				3AB0EEBF1B120FA20065C13F /* Box.framework in Embed Frameworks */,
-				3AB0EEC51B120FA20065C13F /* ReactiveCocoa.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -76,11 +61,6 @@
 		3AB0EE9E1B120DCD0065C13F /* TodaysReactiveMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodaysReactiveMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0EEA31B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReactiveMenuTests.swift; sourceTree = "<group>"; };
-		3AB0EEB41B120F970065C13F /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = SOURCE_ROOT; };
-		3AB0EEB51B120F970065C13F /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = SOURCE_ROOT; };
-		3AB0EEB61B120F970065C13F /* PureLayout_iOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureLayout_iOS.framework; path = Carthage/Build/iOS/PureLayout_iOS.framework; sourceTree = SOURCE_ROOT; };
-		3AB0EEB71B120F970065C13F /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
-		3AB0EEB81B120F970065C13F /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		61CB18DB7AEDAF0488A4522C /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
 		CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF4B3C016B42F7FEA007C0B3 /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,11 +71,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AB0EEC21B120FA20065C13F /* PureLayout_iOS.framework in Frameworks */,
-				3AB0EEBE1B120FA20065C13F /* Box.framework in Frameworks */,
-				3AB0EEC61B120FA20065C13F /* Result.framework in Frameworks */,
-				3AB0EEC41B120FA20065C13F /* ReactiveCocoa.framework in Frameworks */,
-				3AB0EEC01B120FA20065C13F /* ObjectMapper.framework in Frameworks */,
 				7A5EA7023CBFD69ACFB95BFD /* Pods_TodaysReactiveMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,7 +108,6 @@
 		3AB0EE8B1B120DCD0065C13F /* TodaysReactiveMenu */ = {
 			isa = PBXGroup;
 			children = (
-				3AB0EEAE1B120F840065C13F /* Framework */,
 				3AB0EEB11B120F840065C13F /* Util */,
 				3AB0EEB01B120F840065C13F /* Service */,
 				3AB0EEAF1B120F840065C13F /* Model */,
@@ -172,18 +146,6 @@
 				3AB0EEA31B120DCD0065C13F /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		3AB0EEAE1B120F840065C13F /* Framework */ = {
-			isa = PBXGroup;
-			children = (
-				3AB0EEB41B120F970065C13F /* Box.framework */,
-				3AB0EEB51B120F970065C13F /* ObjectMapper.framework */,
-				3AB0EEB61B120F970065C13F /* PureLayout_iOS.framework */,
-				3AB0EEB71B120F970065C13F /* ReactiveCocoa.framework */,
-				3AB0EEB81B120F970065C13F /* Result.framework */,
-			);
-			path = Framework;
 			sourceTree = "<group>";
 		};
 		3AB0EEAF1B120F840065C13F /* Model */ = {
@@ -538,7 +500,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TodaysReactiveMenu/TodaysReactiveMenu-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/** $(SRCROOT)/Pods/GoogleCloudMessaging/** $(SRCROOT)/Pods/GGLInstanceID/**";
 			};
 			name = Debug;
 		};
@@ -560,7 +522,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "TodaysReactiveMenu/TodaysReactiveMenu-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
-				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/**";
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/** $(SRCROOT)/Pods/GoogleCloudMessaging/** $(SRCROOT)/Pods/GGLInstanceID/**";
 			};
 			name = Release;
 		};
