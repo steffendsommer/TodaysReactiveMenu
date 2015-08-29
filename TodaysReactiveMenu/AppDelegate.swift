@@ -8,13 +8,15 @@
 
 import UIKit
 
+
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate {
 
     var window: UIWindow?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Setup Google Analytics
         // Configure tracker from GoogleService-Info.plist.
         var configureError:NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
@@ -24,6 +26,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         
+        // Register for remote notifications
+          var types: UIUserNotificationType = UIUserNotificationType.Badge |
+              UIUserNotificationType.Alert |
+              UIUserNotificationType.Sound
+          var settings: UIUserNotificationSettings =
+              UIUserNotificationSettings( forTypes: types, categories: nil )
+          application.registerUserNotificationSettings( settings )
+          application.registerForRemoteNotifications()
+        
+        // Setup initial view
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
@@ -31,6 +43,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             window.makeKeyAndVisible()
         }
         return true
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        GGLInstanceID.sharedInstance().startWithConfig(GGLInstanceIDConfig.defaultConfig())
+        let registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken, kGGLInstanceIDAPNSServerTypeSandboxOption:true]
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(GGLContext.sharedInstance().configuration.gcmSenderID, scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+    }
+    
+    func registrationHandler(registrationToken: String!, error: NSError!) {
+        if (error == nil) {
+            // Save push token on backend.
+            submitPushToken(registrationToken)
+        }
+    }
+    
+    func onTokenRefresh() {
+        // A rotation of the registration tokens is happening, so the app needs to request a new token.
+        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(GGLContext.sharedInstance().configuration.gcmSenderID, scope: kGGLInstanceIDScopeGCM, options: nil, handler: registrationHandler)
     }
 
     func applicationWillResignActive(application: UIApplication) {

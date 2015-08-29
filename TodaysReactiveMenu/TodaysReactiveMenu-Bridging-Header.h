@@ -10,5 +10,6 @@
 #define TodaysReactiveMenu_BridgingHeader_h
 
 #import "Analytics.h"
+#import "CloudMessaging.h"
 
 #endif
