@@ -10,26 +10,21 @@ import Foundation
 import ReactiveCocoa
 
 
-class TodaysMenuViewModel: NSObject {
+struct TodaysMenuViewModel {
     
-    private let viewIsActive = MutableProperty<Bool>(false)
-    
-    private let menu         = MutableProperty<Menu?>(nil)
     let headline             = ConstantProperty<String>("Today's Menu")
     let subHeadline          = ConstantProperty<String>("at\nUnwire")
     let mainCourse           = MutableProperty("")
     let logo                 = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
     let sides                = MutableProperty<String>("")
     let cake                 = ConstantProperty<String>("CAKE DAY")
-    let hideCakeBanner       = MutableProperty<Bool>(true)
-    let hideMenu             = MutableProperty<Bool>(true)
+    let isCakeServedToday    = MutableProperty<Bool>(true)
+    let shouldHideMenu       = MutableProperty<Bool>(true)
     
     
     // MARK: Object Life Cycle -
     
-    override init() {
-        super.init()
-        
+     init() {        
         // Setup RAC bindings.
         self.setupBindings()
     }
@@ -51,66 +46,62 @@ class TodaysMenuViewModel: NSObject {
                 false
             }
         
-        self.viewIsActive <~ merge([active, inactive])
+        let viewIsActive = merge([active, inactive])
         
         // Handle fetching of menu by fetching it every time the view gets active.
-        self.menu <~ self.viewIsActive.producer
+        let menu = viewIsActive
             |> filter { isActive in
                 return isActive
             }
+            |> promoteErrors(NSError)
             |> flatMap(.Latest) { _ in
                 return fetchTodaysMenu()
-                    |> observeOn(UIScheduler())
-                    |> on(error: { _ in
-                        // TODO: Make this more declarative.
-                        self.hideMenu.put(true)
-                    })
-                    |> ignoreError
             }
             |> observeOn(UIScheduler())
     
         // Make sure, we're only showing the menu when it's actually the menu of today.
-        self.hideMenu <~ self.menu.producer
+        self.shouldHideMenu <~ menu
             |> ignoreNil
+            |> ignoreError
             |> map { menu in
-                !NSCalendar.currentCalendar().isDateInToday(menu.servedAt!)
+                !menu.isTodaysMenu()
             }
-    
-        let fetchedMainCourse = self.menu.producer
+        
+        // Make sure to display some informative messages if the menu cannot be fetched.
+        let fetchedMainCourse = menu
+            |> map { fetchedMenu in
+                if (fetchedMenu!.isTodaysMenu()) {
+                    return fetchedMenu!.mainCourse!
+                } else {
+                    return "The chef is working hard on getting Today's Menu ready. Please come back later."
+                }
+            }
+            |> catch { error in
+                SignalProducer<String, NoError>(value: "Something went wrong in the kitchen. Please come back later.")
+            }
+        
+        self.mainCourse <~ fetchedMainCourse
+        
+        self.sides <~ menu
             |> ignoreNil
-            |> map { menu in
-                menu.mainCourse!
-            }
-        
-        let menuReadyNotice = self.hideMenu.producer
-            |> skip(1) // as `hideMenu` will be initially true.
-            |> filter { shouldHide in
-                shouldHide
-            }
-            |> map { _ in
-                "The chef is working hard on getting Today's Menu ready. Please come back later."
-            }
-        
-        self.mainCourse <~ merge([fetchedMainCourse, menuReadyNotice])
-        
-        self.sides <~ self.menu.producer
-            |> ignoreNil
+            |> ignoreError
             |> map { menu in
                 menu.sides!
             }
         
         // Handle the showing of the cake banner.
-        let anyCake = self.menu.producer
+        let anyCake = menu
             |> ignoreNil
+            |> ignoreError
             |> map { menu in
                 menu.cake!
             }
         
-        self.hideCakeBanner <~ combineLatest(self.hideMenu.producer, anyCake)
+        self.isCakeServedToday <~ combineLatest(self.shouldHideMenu.producer, anyCake)
             |> map { shouldHideMenu, cakeToday in
                 shouldHideMenu || !cakeToday
             }
 
     }
-    
+
 }

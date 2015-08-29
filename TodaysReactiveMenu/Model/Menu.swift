@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 
-class Menu: Mappable {
+struct Menu: Mappable {
    
     var identifier: String?
     var link:       String?
@@ -22,20 +22,27 @@ class Menu: Mappable {
     
     // MARK: Object Life Cycle -
    
-    class func newInstance(map: Map) -> Mappable? {
+    static func newInstance(map: Map) -> Mappable? {
         return Menu()
     }
 
     
     // MARK: API Mapping -
     
-    func mapping(map: Map) {
+    mutating func mapping(map: Map) {
         identifier  <- map["identifier"]
         link        <- map["link"]
         servedAt    <- (map["serving_date"], DateTransform())
         mainCourse  <- map["main_course"]
         sides       <- map["sides"]
         cake        <- map["cake"]
+    }
+    
+    
+    // MARK: Convenience methods
+    
+    func isTodaysMenu() -> Bool {
+        return NSCalendar.currentCalendar().isDateInToday(self.servedAt!)
     }
    
 }

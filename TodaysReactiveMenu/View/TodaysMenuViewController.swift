@@ -136,16 +136,16 @@ class TodaysMenuViewController: UIViewController {
     // MARK: - RAC Bindings
     
     func setupBindings() {
-        self.headline.rac_hidden <~ self.viewModel.hideMenu
-        self.subHeadline.rac_hidden <~ self.viewModel.hideMenu
-        self.sides.rac_hidden <~ self.viewModel.hideMenu
+        self.headline.rac_hidden <~ self.viewModel.shouldHideMenu
+        self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu
+        self.sides.rac_hidden <~ self.viewModel.shouldHideMenu
     
         self.headline.rac_text <~ self.viewModel.headline
         self.subHeadline.rac_text <~ self.viewModel.subHeadline
         self.mainCourse.rac_text <~ self.viewModel.mainCourse
         self.logo.rac_image <~ self.viewModel.logo
         self.sides.rac_text <~ self.viewModel.sides
-        self.cakeDayBanner.rac_hidden <~ self.viewModel.hideCakeBanner
+        self.cakeDayBanner.rac_hidden <~ self.viewModel.isCakeServedToday
         self.cakeDayText.rac_text <~ self.viewModel.cake
     }
 
