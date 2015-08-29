@@ -7,7 +7,7 @@ Along with the app, a blog post has been created explaining the process. The pos
 PS: Sorry, for the menu being in Danish. The lunch provider at my work only publishes the menu in Danish :)
 
 ## Setup
-The app uses **Carthage** AND **CocoaPods** for handling third-party dependencies. To build the app, simply clone the repository, then both run `carthage update` and `pod install`.
+The app uses ~~**Carthage** AND~~ **CocoaPods** for handling third-party dependencies. To build the app, simply clone the repository, then both run ~~`carthage update` and~~ `pod install`.
 
 ## Useful resources
 ReactiveCocoa 3 is, at the time of writing, still very new and because of that, the resources are limited. Here are some good places to get you started:
