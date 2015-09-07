@@ -10,7 +10,7 @@ import UIKit
 
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
@@ -27,13 +27,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate {
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         
         // Register for remote notifications
-          var types: UIUserNotificationType = UIUserNotificationType.Badge |
-              UIUserNotificationType.Alert |
-              UIUserNotificationType.Sound
-          var settings: UIUserNotificationSettings =
-              UIUserNotificationSettings( forTypes: types, categories: nil )
-          application.registerUserNotificationSettings( settings )
-          application.registerForRemoteNotifications()
+        var types: UIUserNotificationType = UIUserNotificationType.Badge |
+                   UIUserNotificationType.Alert |
+                   UIUserNotificationType.Sound
+            
+        var settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+            
+        application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
         
         // Setup initial view
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
@@ -46,21 +47,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        GGLInstanceID.sharedInstance().startWithConfig(GGLInstanceIDConfig.defaultConfig())
-        let registrationOptions = [kGGLInstanceIDRegisterAPNSOption:deviceToken, kGGLInstanceIDAPNSServerTypeSandboxOption:false]
-        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(GGLContext.sharedInstance().configuration.gcmSenderID, scope: kGGLInstanceIDScopeGCM, options: registrationOptions, handler: registrationHandler)
+        
+        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        var deviceTokenString: String = ( deviceToken.description as NSString )
+                                            .stringByTrimmingCharactersInSet( characterSet )
+                                            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        
+        submitPushToken(deviceTokenString)
     }
     
-    func registrationHandler(registrationToken: String!, error: NSError!) {
-        if (error == nil) {
-            // Save push token on backend.
-            submitPushToken(registrationToken)
-        }
-    }
-    
-    func onTokenRefresh() {
-        // A rotation of the registration tokens is happening, so the app needs to request a new token.
-        GGLInstanceID.sharedInstance().tokenWithAuthorizedEntity(GGLContext.sharedInstance().configuration.gcmSenderID, scope: kGGLInstanceIDScopeGCM, options: nil, handler: registrationHandler)
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error.localizedDescription)
     }
 
     func applicationWillResignActive(application: UIApplication) {
