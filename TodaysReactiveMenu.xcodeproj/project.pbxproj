@@ -531,7 +531,6 @@
 				INFOPLIST_FILE = TodaysReactiveMenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodaysReactiveMenu.app/TodaysReactiveMenu";
 			};
 			name = Debug;
 		};
@@ -546,7 +545,6 @@
 				INFOPLIST_FILE = TodaysReactiveMenuTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TodaysReactiveMenu.app/TodaysReactiveMenu";
 			};
 			name = Release;
 		};
