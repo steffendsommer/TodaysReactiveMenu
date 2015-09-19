@@ -13,8 +13,9 @@ import ReactiveCocoa
 
 class TodaysMenuViewController: UIViewController {
 
+    private var viewModel: TodaysMenuViewModel
+    
     private let GAScreenName    = "TodaysMenuViewController"
-    private let viewModel       = TodaysMenuViewModel()
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
 
     private let headline        = UILabel()
@@ -25,6 +26,18 @@ class TodaysMenuViewController: UIViewController {
     private let cakeDayBanner   = UIView()
     private let cakeDayText     = UILabel()
 
+
+    // MARK: - Object Life Cycle
+    
+    init(viewModel: TodaysMenuViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
 
     // MARK: - View Life Cycle
 

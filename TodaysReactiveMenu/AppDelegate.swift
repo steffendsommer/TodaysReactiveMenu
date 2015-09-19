@@ -13,6 +13,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    let menuService = MenuService()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -40,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
-            window.rootViewController = TodaysMenuViewController()
+            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuService: self.menuService))
             window.makeKeyAndVisible()
         }
         return true
@@ -53,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             .stringByTrimmingCharactersInSet( characterSet )
                                             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
-        submitPushToken(deviceTokenString)
+        self.menuService.submitPushToken(deviceTokenString)
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {

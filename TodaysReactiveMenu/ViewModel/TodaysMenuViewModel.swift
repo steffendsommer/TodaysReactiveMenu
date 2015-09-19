@@ -12,6 +12,8 @@ import ReactiveCocoa
 
 struct TodaysMenuViewModel {
     
+    private var menuService: MenuService
+    
     let headline            = ConstantProperty<String>("Today's Menu")
     let subHeadline         = ConstantProperty<String>("at\nUnwire")
     private let menu        = MutableProperty<Menu?>(nil)
@@ -25,7 +27,8 @@ struct TodaysMenuViewModel {
     
     // MARK: Object Life Cycle -
     
-    init() {        
+    init(menuService: MenuService) {
+        self.menuService = menuService
         // Setup RAC bindings.
         self.setupBindings()
     }
@@ -53,7 +56,7 @@ struct TodaysMenuViewModel {
         self.menu <~ viewIsActive
             |> filter { $0 }
             |> flatMap(.Latest) { _ in
-                return fetchTodaysMenu()
+                return self.menuService.fetchTodaysMenu()
                     |> ignoreError
             }
             |> observeOn(UIScheduler())
