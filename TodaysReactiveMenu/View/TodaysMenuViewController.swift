@@ -45,7 +45,7 @@ class TodaysMenuViewController: UIViewController {
         self.cakeDayBanner.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4))
         self.view.addSubview(self.cakeDayBanner)
         self.cakeDayBanner.addSubview(self.cakeDayText)
-
+        
         setupConstraints()
     }
     

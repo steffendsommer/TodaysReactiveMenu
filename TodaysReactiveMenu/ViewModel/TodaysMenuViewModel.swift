@@ -25,7 +25,7 @@ struct TodaysMenuViewModel {
     
     // MARK: Object Life Cycle -
     
-     init() {        
+    init() {        
         // Setup RAC bindings.
         self.setupBindings()
     }
