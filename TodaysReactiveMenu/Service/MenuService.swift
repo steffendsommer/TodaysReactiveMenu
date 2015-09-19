@@ -18,9 +18,9 @@ func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
   
     return session.rac_dataWithRequest(request)
         |> map { data, response in
-            let json = try { (NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) as? [NSDictionary])?.first }
+            let json = try { (NSJSONSerialization.JSONObjectWithData(data, options: nil, error: $0) as? [NSDictionary])?.first }            
             return Mapper<Menu>().map(json.value)
-    }
+        }
 }
 
 func submitPushToken(token: NSString) -> Void {
