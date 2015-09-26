@@ -63,10 +63,10 @@ class TodaysMenuViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
-        var tracker = GAI.sharedInstance().defaultTracker
+        let tracker = GAI.sharedInstance().defaultTracker
         tracker.set(kGAIScreenName, value: self.GAScreenName)
 
-        var builder = GAIDictionaryBuilder.createScreenView()
+        let builder = GAIDictionaryBuilder.createScreenView()
         tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
@@ -149,17 +149,17 @@ class TodaysMenuViewController: UIViewController {
     // MARK: - RAC Bindings
     
     func setupBindings() {
-        self.headline.rac_hidden <~ self.viewModel.shouldHideMenu
-        self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu
-        self.sides.rac_hidden <~ self.viewModel.shouldHideMenu
+        self.headline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
+        self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
+        self.sides.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
     
-        self.headline.rac_text <~ self.viewModel.headline
-        self.subHeadline.rac_text <~ self.viewModel.subHeadline
-        self.mainCourse.rac_text <~ self.viewModel.mainCourse
-        self.logo.rac_image <~ self.viewModel.logo
-        self.sides.rac_text <~ self.viewModel.sides
-        self.cakeDayBanner.rac_hidden <~ self.viewModel.isCakeServedToday
-        self.cakeDayText.rac_text <~ self.viewModel.cake
+        self.headline.rac_text <~ self.viewModel.headline.producer.observeOn(UIScheduler())
+        self.subHeadline.rac_text <~ self.viewModel.subHeadline.producer.observeOn(UIScheduler())
+        self.mainCourse.rac_text <~ self.viewModel.mainCourse.producer.observeOn(UIScheduler())
+        self.logo.rac_image <~ self.viewModel.logo.producer.observeOn(UIScheduler())
+        self.sides.rac_text <~ self.viewModel.sides.producer.observeOn(UIScheduler())
+        self.cakeDayBanner.rac_hidden <~ self.viewModel.isCakeServedToday.producer.observeOn(UIScheduler())
+        self.cakeDayText.rac_text <~ self.viewModel.cake.producer.observeOn(UIScheduler())
     }
 
 }

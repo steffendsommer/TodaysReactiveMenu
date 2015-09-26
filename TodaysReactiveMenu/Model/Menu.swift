@@ -18,12 +18,12 @@ struct Menu: Mappable {
     var mainCourse: String?
     var sides:      String?
     var cake:       Bool?
-   
+
     
     // MARK: Object Life Cycle -
-   
-    static func newInstance(map: Map) -> Mappable? {
-        return Menu()
+    
+    init?(_ map: Map) {
+
     }
 
     

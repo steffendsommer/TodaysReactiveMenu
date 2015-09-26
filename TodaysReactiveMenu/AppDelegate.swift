@@ -24,15 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
 
         // Optional: configure GAI options.
-        var gai = GAI.sharedInstance()
+        let gai = GAI.sharedInstance()
         gai.trackUncaughtExceptions = true  // report uncaught exceptions
         
         // Register for remote notifications
-        var types: UIUserNotificationType = UIUserNotificationType.Badge |
-                   UIUserNotificationType.Alert |
-                   UIUserNotificationType.Sound
-            
-        var settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+        let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
             
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
@@ -49,8 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
-        var deviceTokenString: String = ( deviceToken.description as NSString )
+        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        let deviceTokenString: String = ( deviceToken.description as NSString )
                                             .stringByTrimmingCharactersInSet( characterSet )
                                             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
@@ -58,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        println(error.localizedDescription)
+        print(error.localizedDescription)
     }
 
     func applicationWillResignActive(application: UIApplication) {
