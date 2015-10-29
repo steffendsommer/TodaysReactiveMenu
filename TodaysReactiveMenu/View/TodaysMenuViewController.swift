@@ -15,9 +15,7 @@ class TodaysMenuViewController: UIViewController {
 
     private var viewModel: TodaysMenuViewModel
     
-    private let GAScreenName    = "TodaysMenuViewController"
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
-
     private let headline        = UILabel()
     private let subHeadline     = UILabel()
     private let mainCourse      = UILabel()
