@@ -66,7 +66,7 @@ struct TodaysMenuViewModel {
                     switch event {
                         case let .Next(fetchedMenu):
                             self.menu.value = fetchedMenu
-                        case .Error(_):
+                        case .Failed(_):
                             self.mainCourse.value = self.fetchMenuErrorMsg
                         default:
                             break

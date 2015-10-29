@@ -9,10 +9,10 @@
 import ReactiveCocoa
 
 
-extension SignalProducer where T: OptionalType {
-	public func ignoreError() -> SignalProducer<T, NoError> {
+extension SignalProducer where Value: OptionalType {
+	public func ignoreError() -> SignalProducer<Value, NoError> {
 		return flatMapError { _ in
-            SignalProducer<T, NoError>.empty
+            SignalProducer<Value, NoError>.empty
         }
 	}
 }
