@@ -50,12 +50,7 @@ struct MenuService {
             request.HTTPMethod = "POST"
             let body = try (NSJSONSerialization.dataWithJSONObject(["token" : token, "type" : "ios", "environment" : env], options: NSJSONWritingOptions(rawValue: 0)))
             request.HTTPBody = body
-            let task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-//                do {
-//                    let json = try (NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions(rawValue: 0)) as? NSDictionary)
-//                    self.auth_token = try (json!["auth_token"] as? String)
-//                } catch {}
-            })
+            let task = session.dataTaskWithRequest(request)
             task.resume()
         } catch {
             print("Failed to submit push token")
