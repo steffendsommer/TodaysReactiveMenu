@@ -56,6 +56,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print(error.localizedDescription)
     }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // Push received while being in background mode. Fetch the menu and send it to the watch.
+        self.menuService.fetchTodaysMenu().startWithNext { value in
+            if let menu = value as Menu? {
+                self.watchService.sendMenu(menu)
+            }
+        }
+    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

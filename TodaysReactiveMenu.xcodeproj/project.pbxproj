@@ -175,13 +175,13 @@
 		3A29EB341BB828B10053207C /* TodaysReactiveMenuWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
+				3ABD432E1BE2BD9C00B13DC8 /* Storage */,
+				3ABD432D1BE2BD9700B13DC8 /* Service */,
 				3A29EB371BB828B10053207C /* InterfaceController.swift */,
 				3A29EB391BB828B10053207C /* ExtensionDelegate.swift */,
 				3A29EB3B1BB828B10053207C /* NotificationController.swift */,
 				3A29EB3D1BB828B10053207C /* GlanceController.swift */,
 				3A29EB3F1BB828B10053207C /* ComplicationController.swift */,
-				3AC7ACF21BE0A605000149DF /* MenuStorage.swift */,
-				3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */,
 				3A29EB411BB828B10053207C /* Assets.xcassets */,
 				3A29EB431BB828B10053207C /* Info.plist */,
 				3A29EB351BB828B10053207C /* Supporting Files */,
@@ -303,6 +303,22 @@
 				3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		3ABD432D1BE2BD9700B13DC8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+		3ABD432E1BE2BD9C00B13DC8 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				3AC7ACF21BE0A605000149DF /* MenuStorage.swift */,
+			);
+			name = Storage;
 			sourceTree = "<group>";
 		};
 		B899FE3D9FBB303234AE3644 /* Frameworks */ = {
@@ -427,6 +443,11 @@
 					3AB0EE881B120DCD0065C13F = {
 						CreatedOnToolsVersion = 6.3.2;
 						DevelopmentTeam = D6T77S259B;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					3AB0EE9D1B120DCD0065C13F = {
 						CreatedOnToolsVersion = 6.3.2;
