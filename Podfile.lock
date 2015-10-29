@@ -1,4 +1,8 @@
 PODS:
+  - Crashlytics (3.3.4)
+  - Fabric (1.5.5):
+    - Fabric/Base (= 1.5.5)
+  - Fabric/Base (1.5.5)
   - ObjectMapper (0.17)
   - PureLayout (3.0.1)
   - ReactiveCocoa (4.0.0-alpha-3):
@@ -15,11 +19,15 @@ PODS:
   - Result (0.6.0-beta.5)
 
 DEPENDENCIES:
+  - Crashlytics
+  - Fabric
   - ObjectMapper (~> 0.17)
   - PureLayout (~> 3.0.1)
   - ReactiveCocoa (= 4.0.0-alpha-3)
 
 SPEC CHECKSUMS:
+  Crashlytics: 41c082440d2e14da444186fff65e79c0b4b35d4c
+  Fabric: 190bf1a6eb65f7500de1347d027d2e59a7e53db1
   ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
   ReactiveCocoa: f03dcfd385b0e4ee5b7a323f5e0b146a498e12d3

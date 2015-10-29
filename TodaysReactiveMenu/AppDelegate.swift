@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Fabric
+import Crashlytics
 
 
 @UIApplicationMain
@@ -16,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let menuService = MenuService()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        // Setup Crashlytics
+        Fabric.with([Crashlytics.self])
         
         // Register for remote notifications
         let settings: UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
