@@ -391,8 +391,7 @@
 				3AB0EEC81B120FA30065C13F /* Embed Frameworks */,
 				5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */,
 				0765021627F64039F8385948 /* Embed Pods Frameworks */,
-				3ABD43291BE2854300B13DC8 /* Embed Pods Frameworks */,
-				3ABD432A1BE28E1900B13DC8 /* Check Pods Manifest.lock */,
+				3ABD432A1BE28E1900B13DC8 /* Fabric */,
 				3A29EB4E1BB828B10053207C /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -439,6 +438,7 @@
 					};
 					3A29EB2F1BB828B10053207C = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = D6T77S259B;
 					};
 					3AB0EE881B120DCD0065C13F = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -529,29 +529,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3ABD43291BE2854300B13DC8 /* Embed Pods Frameworks */ = {
+		3ABD432A1BE28E1900B13DC8 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#!/bin/bash    \nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=`echo $buildNumber +1|bc`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
-			showEnvVarsInLog = 0;
-		};
-		3ABD432A1BE28E1900B13DC8 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
+			name = Fabric;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,6 +696,7 @@
 				INFOPLIST_FILE = TodaysReactiveMenuWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "f187e48f-3af6-4d74-a332-729797b06209";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -727,6 +713,7 @@
 				INFOPLIST_FILE = TodaysReactiveMenuWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "08b5efbc-86f5-4639-8d21-65f35775c2e3";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -739,12 +726,14 @@
 			baseConfigurationReference = 951C01B83F8271AA7A17B93D /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_TESTABILITY = YES;
 				INFOPLIST_FILE = "TodaysReactiveMenuWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "21575c4d-e508-489e-b84a-6e9219cd7ef2";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
@@ -757,10 +746,12 @@
 			baseConfigurationReference = 48632B2AF1E2F25E22C80C48 /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "TodaysReactiveMenuWatch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "24e92627-002d-4535-beb2-e2df741c0ba5";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
