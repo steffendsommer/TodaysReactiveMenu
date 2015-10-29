@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 
 
-struct Menu: Mappable {
+class Menu: Mappable {
    
     var identifier: String?
     var link:       String?
@@ -22,14 +22,14 @@ struct Menu: Mappable {
     
     // MARK: Object Life Cycle -
     
-    init?(_ map: Map) {
+    required init?(_ map: Map) {
 
     }
 
     
     // MARK: API Mapping -
     
-    mutating func mapping(map: Map) {
+    func mapping(map: Map) {
         identifier  <- map["identifier"]
         link        <- map["link"]
         servedAt    <- (map["serving_date"], DateTransform())

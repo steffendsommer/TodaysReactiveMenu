@@ -14,24 +14,24 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0)
   - ObjectMapper (0.17)
   - PureLayout (3.0.1)
-  - ReactiveCocoa (4.0.2-alpha-1):
-    - ReactiveCocoa/UI (= 4.0.2-alpha-1)
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/Core (4.0.2-alpha-1):
+  - ReactiveCocoa (4.0.0-alpha-3):
+    - ReactiveCocoa/UI (= 4.0.0-alpha-3)
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/Core (4.0.0-alpha-3):
     - ReactiveCocoa/no-arc
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/no-arc (4.0.2-alpha-1):
-    - Result (~> 0.6-beta.1)
-  - ReactiveCocoa/UI (4.0.2-alpha-1):
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/no-arc (4.0.0-alpha-3):
+    - Result (~> 0.6-beta.4)
+  - ReactiveCocoa/UI (4.0.0-alpha-3):
     - ReactiveCocoa/Core
-    - Result (~> 0.6-beta.1)
-  - Result (0.6-beta.1)
+    - Result (~> 0.6-beta.4)
+  - Result (0.6.0-beta.5)
 
 DEPENDENCIES:
   - Google/Analytics (~> 1.0.0)
   - ObjectMapper (~> 0.17)
   - PureLayout (~> 3.0.1)
-  - ReactiveCocoa (= 4.0.2-alpha-1)
+  - ReactiveCocoa (= 4.0.0-alpha-3)
 
 SPEC CHECKSUMS:
   Google: 875f5a8ade86dd02e36586e4a54814843938c7f6
@@ -41,7 +41,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: e3475cd4d45134221d2f3f3626095a1c49b62041
   ObjectMapper: fa286b7cb5a398f1b0d8d64d0dd33fd1b307022c
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  ReactiveCocoa: 652cf90e5de65708e7e2111f77405756da21aabe
-  Result: af24e3e57ab81005ec4221a53fd36dc1e7a52869
+  ReactiveCocoa: f03dcfd385b0e4ee5b7a323f5e0b146a498e12d3
+  Result: 8ae33a29ed1e147514b9536de523a978d7faba1f
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
