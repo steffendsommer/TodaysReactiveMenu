@@ -8,49 +8,50 @@
 
 import WatchKit
 import Foundation
-import WatchConnectivity
-import ObjectMapper
 
 
-class InterfaceController: WKInterfaceController, WCSessionDelegate {
+class InterfaceController: WKInterfaceController {
 
     @IBOutlet var mainCourse: WKInterfaceLabel?
     @IBOutlet var sides: WKInterfaceLabel?
+    
+    private let menuNotReadyMsg = "The chef is working on it. Please come back later."
+    private var menuStorage = MenuStorage()
+    
+    var menu: Menu? {
+        didSet {
+            self.mainCourse?.setText(menu?.mainCourse)
+            self.sides?.setText(menu?.sides)
+        }
+    }
+
+    
+    // MARK: - Object Life Cycle
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
-        if (WCSession.isSupported()) {
-            let session = WCSession.defaultSession()
-            session.delegate = self
-            session.activateSession()
-        }
+        // Setup initial menu.
+        fetchMenu()
+        
+        // Listen for menu updates.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fetchMenu", name: saveNotificationKey, object: nil)
     }
 
-    override func willActivate() {
-        super.willActivate()
+    override func didDeactivate() {
+        // Stop listening for menu updates.
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
     
-    // MARK: - Helpers
+    // MARK: - NSNotificationCenter
     
-    func updateMenu() {
-     if let menu = MenuHelper().loadMenu() {
-        self.mainCourse?.setText(menu.mainCourse)
-        self.sides?.setText(menu.sides)
-     }
-    }
-    
-    
-    // Mark: - WCSessionDelegate
-    
-    func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
-        
-        if let menu = Mapper<Menu>().map(applicationContext) {
-            let helper = MenuHelper()
-            helper.saveMenu(menu)
-            self.updateMenu()
+    func fetchMenu() {
+        do {
+            try self.menu = menuStorage.loadMenu()
+        } catch {
+            self.mainCourse?.setText(menuNotReadyMsg)
+            self.sides?.setText("")
         }
     }
 

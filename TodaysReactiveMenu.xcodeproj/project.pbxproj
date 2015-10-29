@@ -29,7 +29,8 @@
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
 		3AB0EE991B120DCD0065C13F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE971B120DCD0065C13F /* LaunchScreen.xib */; };
 		3AB0EEA51B120DCD0065C13F /* TodaysReactiveMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */; };
-		3AC7ACF31BE0A605000149DF /* MenuHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7ACF21BE0A605000149DF /* MenuHelper.swift */; };
+		3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */; };
+		3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7ACF21BE0A605000149DF /* MenuStorage.swift */; };
 		3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
 		7A5EA7023CBFD69ACFB95BFD /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */; };
 		8C4BC747BF1E90E79498A40C /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B6D4383C9CBF820A62AB09 /* Pods_TodaysReactiveMenuWatch_Extension.framework */; };
@@ -124,7 +125,8 @@
 		3AB0EE9E1B120DCD0065C13F /* TodaysReactiveMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodaysReactiveMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0EEA31B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReactiveMenuTests.swift; sourceTree = "<group>"; };
-		3AC7ACF21BE0A605000149DF /* MenuHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuHelper.swift; sourceTree = "<group>"; };
+		3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
+		3AC7ACF21BE0A605000149DF /* MenuStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuStorage.swift; sourceTree = "<group>"; };
 		48632B2AF1E2F25E22C80C48 /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		61CB18DB7AEDAF0488A4522C /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
 		951C01B83F8271AA7A17B93D /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +180,8 @@
 				3A29EB3B1BB828B10053207C /* NotificationController.swift */,
 				3A29EB3D1BB828B10053207C /* GlanceController.swift */,
 				3A29EB3F1BB828B10053207C /* ComplicationController.swift */,
-				3AC7ACF21BE0A605000149DF /* MenuHelper.swift */,
+				3AC7ACF21BE0A605000149DF /* MenuStorage.swift */,
+				3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */,
 				3A29EB411BB828B10053207C /* Assets.xcassets */,
 				3A29EB431BB828B10053207C /* Info.plist */,
 				3A29EB351BB828B10053207C /* Supporting Files */,
@@ -602,7 +605,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC7ACF31BE0A605000149DF /* MenuHelper.swift in Sources */,
+				3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */,
+				3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
 				3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */,
 				3A29EB3A1BB828B10053207C /* ExtensionDelegate.swift in Sources */,

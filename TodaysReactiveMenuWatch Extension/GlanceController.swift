@@ -12,20 +12,44 @@ import Foundation
 
 class GlanceController: WKInterfaceController {
 
+    @IBOutlet var mainCourse: WKInterfaceLabel?
+    
+    private let menuNotReadyMsg = "The chef is working on it. Please come back later."
+    private var menuStorage = MenuStorage()
+    
+    var menu: Menu? {
+        didSet {
+            self.mainCourse?.setText(menu?.mainCourse)
+        }
+    }
+    
+
+    // MARK: - Object Life Cycle
+
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
         
-        // Configure interface objects here.
-    }
-
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+        // Setup initial menu.
+        fetchMenu()
+        
+        // Listen for menu updates.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fetchMenu", name: saveNotificationKey, object: nil)
     }
 
     override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
+        // Stop listening for menu updates.
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    
+    // MARK: - NSNotificationCenter
+    
+    func fetchMenu() {
+        do {
+            try self.menu = menuStorage.loadMenu()
+        } catch {
+            self.mainCourse?.setText(menuNotReadyMsg)
+        }
     }
 
 }

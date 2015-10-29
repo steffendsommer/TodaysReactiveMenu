@@ -13,27 +13,26 @@ import ObjectMapper
 class WatchService: NSObject, WCSessionDelegate {
 
     private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
+    private var sessionStarted = false
 
     func startSession() {
         if (WCSession.isSupported()) {
             session?.delegate = self
             session?.activateSession()
+            sessionStarted = true
         }
     }
 
     func sendMenu(menu: Menu) {
     
-        if (WCSession.isSupported()) {
+        // Make sure that the session is up and running.
+        if (sessionStarted) {
             
-            if let data = Mapper().toJSONString(menu, prettyPrint: true)!.dataUsingEncoding(NSUTF8StringEncoding) {
-                do {
-                    let menuDictionary = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? [String:AnyObject]
-                    try session?.updateApplicationContext(menuDictionary!)
-                } catch {
-                    print("Something went wrong")
-                }
+            do {
+                try session?.updateApplicationContext(Mapper().toJSON(menu))
+            } catch {
+                print("Failed to send menu to Watch.")
             }
-
         }
     
     }
