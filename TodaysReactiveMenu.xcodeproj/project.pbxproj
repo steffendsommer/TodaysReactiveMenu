@@ -346,12 +346,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A29EB4B1BB828B10053207C /* Build configuration list for PBXNativeTarget "TodaysReactiveMenuWatch Extension" */;
 			buildPhases = (
-				2FCA44880093E9059A93AE22 /* Check Pods Manifest.lock */,
 				3A29EB2C1BB828B10053207C /* Sources */,
 				3A29EB2D1BB828B10053207C /* Frameworks */,
 				3A29EB2E1BB828B10053207C /* Resources */,
-				2A7C7B2C77AF5933F2751C89 /* Embed Pods Frameworks */,
 				EEBB290FFA773A9557A355B1 /* Copy Pods Resources */,
+				5EBF6F356FF368CCD0726380 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -373,8 +372,8 @@
 				3AB0EEC81B120FA30065C13F /* Embed Frameworks */,
 				5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */,
 				0765021627F64039F8385948 /* Embed Pods Frameworks */,
-				3ABD43291BE2854300B13DC8 /* ShellScript */,
-				3ABD432A1BE28E1900B13DC8 /* ShellScript */,
+				3ABD43291BE2854300B13DC8 /* Embed Pods Frameworks */,
+				3ABD432A1BE28E1900B13DC8 /* Check Pods Manifest.lock */,
 				3A29EB4E1BB828B10053207C /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -506,7 +505,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3ABD43291BE2854300B13DC8 /* ShellScript */ = {
+		3ABD43291BE2854300B13DC8 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -521,7 +520,7 @@
 			shellScript = "#!/bin/bash    \nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=`echo $buildNumber +1|bc`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 			showEnvVarsInLog = 0;
 		};
-		3ABD432A1BE28E1900B13DC8 /* ShellScript */ = {
+		3ABD432A1BE28E1900B13DC8 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -564,6 +563,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5EBF6F356FF368CCD0726380 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EEBB290FFA773A9557A355B1 /* Copy Pods Resources */ = {
