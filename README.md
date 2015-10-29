@@ -1,13 +1,18 @@
-![Headline image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true =728x130)
+<img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true" width="728" />
 
-Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4.0 alpha-1** using the **MVVM** pattern and **Swift 2.0**. If you're looking for the implementation using ReactiveCocoa 3.0 RC-1 and Swift 1.2, then have a look at the `reactivecocoa-3` branch.
+Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4** using the **MVVM** pattern and **Swift 2.0**.
 
-Along with the app, a blog post has been created explaining the process. The post can be found here: [http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/).
+Along with the app, a blog post has been created explaining the process. The post can be found [here](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/). Please keep in mind that things might have changed slighty since that blog post was made.
 
-PS: Sorry, for the menu being in Danish. The lunch provider at my work only publishes the menu in Danish :)
+I'm sorry that the API returns menu's in Danish, but it is unfortunately how the lunch provider publishes it. I might consider doing some OCR at some point.
 
 ## Setup
-The app uses **CocoaPods** for handling third-party dependencies. To build the app, simply clone the repository and then run `pod install`.
+The app uses **[CocoaPods](https://cocoapods.org)** for handling third-party dependencies. To build the app, simply clone the repository and then run `pod install`.
+
+## Versions
+I'll include any major/minor version bumps:
+
+- **1.0**: Initial version. Supports RAC 4 and Swift 2.
 
 ## Useful resources
 ReactiveCocoa 4 is, at the time of writing, still very new and because of that, the resources are limited. Here are some good places to get you started:
@@ -23,5 +28,7 @@ Note that resources using RAC3 might also apply to RAC4 as the difference is not
 Feel free to open an issue or ping me at [@steffendsommer](http://twitter.com/steffendsommer) if you have any questions. I'm fully aware that I took some corners and that I'm far from comfortable with RAC4 yet, so any useful PR's are more than welcome.
 
 
-## Screenhots
-![image](https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/screenshot.png?raw=true)
+## Screenshots
+Today's Menu  | The error to display when the menu is not ready
+------------- | -------------
+<img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/screenshot01.png?raw=true" width="300px" />  | <img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/screenshot02.png?raw=true" width="300px" />
