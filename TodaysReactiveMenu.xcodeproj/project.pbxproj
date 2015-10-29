@@ -114,7 +114,6 @@
 		3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewController.swift; sourceTree = "<group>"; };
 		3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewModel.swift; sourceTree = "<group>"; };
-		3A8020791B602A8300AED403 /* TodaysReactiveMenu-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TodaysReactiveMenu-Bridging-Header.h"; sourceTree = "<group>"; };
 		3A80207A1B602AD200AED403 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3A9912911BBC4F1A0064777E /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
 		3AB0EE891B120DCD0065C13F /* Today's Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Today's Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +239,6 @@
 			children = (
 				3A80207A1B602AD200AED403 /* GoogleService-Info.plist */,
 				3AB0EE8D1B120DCD0065C13F /* Info.plist */,
-				3A8020791B602A8300AED403 /* TodaysReactiveMenu-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -375,6 +373,8 @@
 				3AB0EEC81B120FA30065C13F /* Embed Frameworks */,
 				5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */,
 				0765021627F64039F8385948 /* Embed Pods Frameworks */,
+				3ABD43291BE2854300B13DC8 /* ShellScript */,
+				3ABD432A1BE28E1900B13DC8 /* ShellScript */,
 				3A29EB4E1BB828B10053207C /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -506,7 +506,7 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2A7C7B2C77AF5933F2751C89 /* Embed Pods Frameworks */ = {
+		3ABD43291BE2854300B13DC8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -518,10 +518,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-frameworks.sh\"\n";
+			shellScript = "#!/bin/bash    \nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=`echo $buildNumber +1|bc`\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 			showEnvVarsInLog = 0;
 		};
-		2FCA44880093E9059A93AE22 /* Check Pods Manifest.lock */ = {
+		3ABD432A1BE28E1900B13DC8 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,7 +533,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 5f095c6cf69ef78431ca2b6d3acb22046943d86c 11eb32ecf282167f8f9da27a7c86c7df1529606c7847150cf5fa0138133cf88e";
 			showEnvVarsInLog = 0;
 		};
 		5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */ = {
@@ -808,7 +808,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "80c32a6b-c3a2-4452-a549-5dd4cb90787a";
+				PROVISIONING_PROFILE = "caf990c4-fa6a-4b62-93f8-92ebf4bdcdb6";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -828,7 +828,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu;
 				PRODUCT_NAME = "Today's Menu";
-				SWIFT_OBJC_BRIDGING_HEADER = "TodaysReactiveMenu/TodaysReactiveMenu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/** $(SRCROOT)/Pods/GoogleCloudMessaging/** $(SRCROOT)/Pods/GGLInstanceID/**";
 			};
@@ -844,10 +844,10 @@
 				INFOPLIST_FILE = TodaysReactiveMenu/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -D DEBUG";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu;
 				PRODUCT_NAME = "Today's Menu";
-				SWIFT_OBJC_BRIDGING_HEADER = "TodaysReactiveMenu/TodaysReactiveMenu-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Pods/Google/** $(SRCROOT)/Pods/GoogleAnalytics/** $(SRCROOT)/Pods/GoogleCloudMessaging/** $(SRCROOT)/Pods/GGLInstanceID/**";
 			};

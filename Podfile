@@ -11,7 +11,8 @@ target 'TodaysReactiveMenu' do
     platform :ios, '9.0'
     
     shared_pods
-    pod 'Google/Analytics', '~> 1.0.0'
+    pod 'Fabric'
+    pod 'Crashlytics'
     pod 'PureLayout', '~> 3.0.1'
     pod 'ReactiveCocoa', '4.0.0-alpha-3'
 end

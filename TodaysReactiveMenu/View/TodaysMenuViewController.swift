@@ -15,9 +15,7 @@ class TodaysMenuViewController: UIViewController {
 
     private var viewModel: TodaysMenuViewModel
     
-    private let GAScreenName    = "TodaysMenuViewController"
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
-
     private let headline        = UILabel()
     private let subHeadline     = UILabel()
     private let mainCourse      = UILabel()
@@ -60,14 +58,6 @@ class TodaysMenuViewController: UIViewController {
         self.cakeDayBanner.addSubview(self.cakeDayText)
         
         setupConstraints()
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: self.GAScreenName)
-
-        let builder = GAIDictionaryBuilder.createScreenView()
-        tracker.send(builder.build() as [NSObject : AnyObject])
     }
 
 
