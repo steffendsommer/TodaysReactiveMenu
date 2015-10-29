@@ -1,4 +1,4 @@
-<img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true" width="728" />
+<img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true" />
 
 Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4** using the **MVVM** pattern and **Swift 2.0**.
 
@@ -29,6 +29,6 @@ Feel free to open an issue or ping me at [@steffendsommer](http://twitter.com/st
 
 
 ## Screenshots
-Today's Menu  | The error to display when the menu is not ready
+Today's Menu  | Error view
 ------------- | -------------
 <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot01.png" width="300px" />  | <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot02.png" width="300px" />
