@@ -10,8 +10,6 @@ import WatchKit
 import ObjectMapper
 
 
-public let saveNotificationKey = "menuStorageDidSave"
-
 enum MenuError: ErrorType {
     case MenuNotReady
 }
@@ -24,9 +22,6 @@ struct MenuStorage {
     
         // Store menu.
         NSUserDefaults.standardUserDefaults().setObject(menu, forKey: storeKey)
-        
-        // Broadcast the change.
-        NSNotificationCenter.defaultCenter().postNotificationName(saveNotificationKey, object:menu, userInfo:nil)
     }
     
     func loadMenu() throws -> Menu {

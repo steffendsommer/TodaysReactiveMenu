@@ -26,25 +26,14 @@ class InterfaceController: WKInterfaceController {
     }
 
     
-    // MARK: - Object Life Cycle
-
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
-        
-        // Setup initial menu.
+    // MARK: - View Life Cycle
+    
+    override func willActivate() {
+        // Setup menu.
         fetchMenu()
-        
-        // Listen for menu updates.
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fetchMenu", name: saveNotificationKey, object: nil)
-    }
-
-    override func didDeactivate() {
-        // Stop listening for menu updates.
-        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    
-    // MARK: - NSNotificationCenter
+    // MARK: - Helpers
     
     func fetchMenu() {
         do {
