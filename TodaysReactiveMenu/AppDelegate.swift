@@ -62,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.menuService.fetchTodaysMenu().startWithNext { value in
             if let menu = value as Menu? {
                 self.watchService.sendMenu(menu)
+                completionHandler(UIBackgroundFetchResult.NewData)
+            } else {
+                completionHandler(UIBackgroundFetchResult.NoData)
             }
         }
     }
