@@ -1,6 +1,6 @@
 <img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true" />
 
-Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4**, **MVVM**, **Swift** and **watchOS**.
+Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4**, **MVVM**, **Swift 2** and **watchOS 2**.
 
 Along with the app, a blog post has been created explaining the process. The post can be found [here](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/). Please keep in mind that things might have changed slighty since that blog post was made.
 
@@ -12,7 +12,7 @@ The app uses **[CocoaPods](https://cocoapods.org)** for handling third-party dep
 ## Versions
 I'll include any major/minor version bumps:
 
-- **1.1**: ⌚️ Apple Watch support
+- **1.1**: ⌚️ Apple Watch support using watchOS 2.
 - **1.0**: Initial version. Supports RAC 4 and Swift 2.
 
 ## Useful resources
