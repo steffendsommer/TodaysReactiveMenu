@@ -531,7 +531,7 @@
 		};
 		3ABD432A1BE28E1900B13DC8 /* Fabric */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -541,7 +541,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 5f095c6cf69ef78431ca2b6d3acb22046943d86c 11eb32ecf282167f8f9da27a7c86c7df1529606c7847150cf5fa0138133cf88e";
+			shellScript = "${PODS_ROOT}/Fabric/run 5f095c6cf69ef78431ca2b6d3acb22046943d86c 11eb32ecf282167f8f9da27a7c86c7df1529606c7847150cf5fa0138133cf88e";
 			showEnvVarsInLog = 0;
 		};
 		5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */ = {
