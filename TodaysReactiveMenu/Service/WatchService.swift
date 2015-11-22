@@ -27,11 +27,10 @@ class WatchService: NSObject, WCSessionDelegate {
     
         // Make sure that the session is up and running.
         if (sessionStarted) {
-            
             do {
                 try session?.updateApplicationContext(Mapper().toJSON(menu))
-            } catch {
-                print("Failed to send menu to Watch.")
+            } catch let error {
+                print("Failed to send menu to Watch: \(error)")
             }
         }
     
