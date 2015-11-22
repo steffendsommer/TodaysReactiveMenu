@@ -30,7 +30,8 @@ Feel free to open an issue or ping me at [@steffendsommer](http://twitter.com/st
 
 
 ## Screenshots
-Today's Menu  | Error view
-------------- | -------------
+📱 Main view | 📱 Error view
+:-------------: | :-------------:
 <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot01.png" width="300px" />  | <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot02.png" width="300px" />
+⌚️ Main app view | ⌚️ Glance
 <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/watch_screenshot01.png" />  | <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/watch_screenshot02.png" />
