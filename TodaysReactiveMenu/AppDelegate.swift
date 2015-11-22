@@ -8,6 +8,7 @@
 
 import UIKit
 import Fabric
+import WatchConnectivity
 import Crashlytics
 
 
@@ -16,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let menuService = MenuService()
+    let watchService = WatchService()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -28,11 +30,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
         
+        // Activate a `WCSession` for communicating with the Apple Watch.
+        self.watchService.startSession()
+        
         // Setup initial view
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
-            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuService: self.menuService))
+            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuService: self.menuService, watchService: self.watchService))
             window.makeKeyAndVisible()
         }
         return true
@@ -50,6 +55,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
         print(error.localizedDescription)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // Push received while being in background mode. Fetch the menu and send it to the watch.
+        self.menuService.fetchTodaysMenu().startWithNext { value in
+            if let menu = value as Menu? {
+                self.watchService.sendMenu(menu)
+                completionHandler(UIBackgroundFetchResult.NewData)
+            } else {
+                completionHandler(UIBackgroundFetchResult.NoData)
+            }
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

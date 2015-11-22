@@ -13,6 +13,7 @@ import ReactiveCocoa
 struct TodaysMenuViewModel {
     
     private var menuService: MenuService
+    private var watchService: WatchService?
     private let menuNotReadyMsg     = "The chef is working hard on getting Today's Menu ready. Please come back later."
     private let fetchMenuErrorMsg   = "Something went wrong in the kitchen. Please come back later."
     
@@ -30,7 +31,12 @@ struct TodaysMenuViewModel {
     // MARK: Object Life Cycle -
     
     init(menuService: MenuService) {
+        self.init(menuService: menuService, watchService: nil)
+    }
+    
+    init(menuService: MenuService, watchService: WatchService?) {
         self.menuService = menuService
+        self.watchService = watchService
         
         // Setup RAC bindings.
         self.setupBindings()
@@ -114,6 +120,16 @@ struct TodaysMenuViewModel {
         self.isCakeServedToday <~ combineLatest(self.shouldHideMenu.producer, anyCake)
             .map { shouldHideMenu, cakeToday in
                 shouldHideMenu || !cakeToday
+            }
+        
+        // Send a fetched menu to the watch (if watch service is defined)
+        // TODO: Make this more declarative.
+        self.menu.producer
+            .ignoreNil()
+            .startWithNext { menu in
+                if let service = self.watchService {
+                    service.sendMenu(menu)
+                }
             }
 
     }

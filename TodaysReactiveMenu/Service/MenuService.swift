@@ -20,6 +20,8 @@ import Result
 
 struct MenuService {
 
+    private var auth_token: String?
+
     func fetchTodaysMenu() -> SignalProducer<Menu?, NSError> {
       
         let session = NSURLSession.sharedSession()
