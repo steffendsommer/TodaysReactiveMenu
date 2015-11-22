@@ -4,7 +4,7 @@ Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4** using th
 
 Along with the app, a blog post has been created explaining the process. The post can be found [here](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/). Please keep in mind that things might have changed slighty since that blog post was made.
 
-I'm sorry that the API returns menu's in Danish, but it is unfortunately how the lunch provider publishes it. I might consider doing some OCR at some point.
+I'm sorry that the API return menus in Danish, but it is unfortunately how the lunch provider publishes it. I might consider doing some OCR at some point.
 
 ## Setup
 The app uses **[CocoaPods](https://cocoapods.org)** for handling third-party dependencies. To build the app, simply clone the repository and then run `pod install`.
@@ -12,6 +12,7 @@ The app uses **[CocoaPods](https://cocoapods.org)** for handling third-party dep
 ## Versions
 I'll include any major/minor version bumps:
 
+- **1.1**: ⌚️ Apple Watch support
 - **1.0**: Initial version. Supports RAC 4 and Swift 2.
 
 ## Useful resources
@@ -32,3 +33,4 @@ Feel free to open an issue or ping me at [@steffendsommer](http://twitter.com/st
 Today's Menu  | Error view
 ------------- | -------------
 <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot01.png" width="300px" />  | <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/screenshot02.png" width="300px" />
+<img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/watch_screenshot01.png" />  | <img src="https://raw.githubusercontent.com/s0mmer/TodaysReactiveMenu/develop/Images/watch_screenshot02.png" />
