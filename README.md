@@ -1,6 +1,6 @@
 <img src="https://github.com/s0mmer/TodaysReactiveMenu/blob/master/Images/TodaysReactiveMenu.png?raw=true" />
 
-Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4** using the **MVVM** pattern and **Swift 2.0**.
+Today's (Reactive) Menu is an example app exploring **ReactiveCocoa 4**, **MVVM**, **Swift** and **watchOS**.
 
 Along with the app, a blog post has been created explaining the process. The post can be found [here](http://steffendsommer.com/blog/2015/06/02/todaysreactivemenu-an-example-app-using-reactivecocoa-3-0-mvvm-and-swift/). Please keep in mind that things might have changed slighty since that blog post was made.
 
