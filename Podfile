@@ -14,7 +14,7 @@ target 'TodaysReactiveMenu' do
     pod 'Fabric', '~> 1.6.0'
     pod 'Crashlytics', '~> 3.4.0'
     pod 'PureLayout', '~> 3.0.1'
-    pod 'ReactiveCocoa', '4.0.0-alpha-3'
+    pod 'ReactiveCocoa', '4.0.4-alpha-4'
 end
 
 target 'TodaysReactiveMenuTests' do
