@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F5637B9F7AE2911D8A36893 /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */; };
 		3A29EB281BB828B10053207C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB261BB828B10053207C /* Interface.storyboard */; };
 		3A29EB2A1BB828B10053207C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB291BB828B10053207C /* Assets.xcassets */; };
 		3A29EB311BB828B10053207C /* TodaysReactiveMenuWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A29EB301BB828B10053207C /* TodaysReactiveMenuWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -17,6 +18,12 @@
 		3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29EB3F1BB828B10053207C /* ComplicationController.swift */; };
 		3A29EB421BB828B10053207C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB411BB828B10053207C /* Assets.xcassets */; };
 		3A29EB461BB828B10053207C /* TodaysReactiveMenuWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */; };
+		3A3F776F1C57DF9F003AE95E /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
+		3A3F77701C57DFA2003AE95E /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
+		3A492DC51C57D72E0017209A /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
+		3A492DC71C57D87F0017209A /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
+		3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52741B13071100C0F539 /* MenuService.swift */; };
+		3A6C4D6A1C55174E00346F3B /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9912911BBC4F1A0064777E /* WatchService.swift */; };
 		3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
 		3A7B52751B13071100C0F539 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52741B13071100C0F539 /* MenuService.swift */; };
 		3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
@@ -32,8 +39,10 @@
 		3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */; };
 		3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7ACF21BE0A605000149DF /* MenuStorage.swift */; };
 		3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
-		7A5EA7023CBFD69ACFB95BFD /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */; };
-		8C4BC747BF1E90E79498A40C /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5B6D4383C9CBF820A62AB09 /* Pods_TodaysReactiveMenuWatch_Extension.framework */; };
+		3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
+		3AC7C2AE1C594E90008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
+		55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */; };
+		CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +105,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysReactiveMenuWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A29EB271BB828B10053207C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A29EB291BB828B10053207C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,6 +120,8 @@
 		3A29EB3F1BB828B10053207C /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
 		3A29EB411BB828B10053207C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A29EB431BB828B10053207C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3A492DC41C57D72E0017209A /* Archivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archivable.swift; sourceTree = "<group>"; };
+		3A492DC61C57D87F0017209A /* Formattable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
 		3A7B52721B1306FF00C0F539 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3A7B52741B13071100C0F539 /* MenuService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		3A7B52761B13071700C0F539 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
@@ -127,12 +140,14 @@
 		3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReactiveMenuTests.swift; sourceTree = "<group>"; };
 		3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
 		3AC7ACF21BE0A605000149DF /* MenuStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuStorage.swift; sourceTree = "<group>"; };
-		48632B2AF1E2F25E22C80C48 /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		61CB18DB7AEDAF0488A4522C /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
-		951C01B83F8271AA7A17B93D /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5B6D4383C9CBF820A62AB09 /* Pods_TodaysReactiveMenuWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF4B3C016B42F7FEA007C0B3 /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
+		3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
+		3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
+		4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
+		BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,7 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8C4BC747BF1E90E79498A40C /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */,
+				2F5637B9F7AE2911D8A36893 /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,11 +163,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A5EA7023CBFD69ACFB95BFD /* Pods_TodaysReactiveMenu.framework in Frameworks */,
+				CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		3AB0EE9B1B120DCD0065C13F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3BBD6223E0A187D97B9C3D5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -205,8 +228,8 @@
 				3A29EB251BB828B10053207C /* TodaysReactiveMenuWatch */,
 				3A29EB341BB828B10053207C /* TodaysReactiveMenuWatch Extension */,
 				3AB0EE8A1B120DCD0065C13F /* Products */,
-				E4175665269B42B27940B133 /* Pods */,
-				B899FE3D9FBB303234AE3644 /* Frameworks */,
+				D56F61A43ACA5F948319A354 /* Pods */,
+				A3A5D837DD33EC12E65964D0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +290,9 @@
 			isa = PBXGroup;
 			children = (
 				3A7B52721B1306FF00C0F539 /* Menu.swift */,
+				3A492DC41C57D72E0017209A /* Archivable.swift */,
+				3A492DC61C57D87F0017209A /* Formattable.swift */,
+				3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -321,22 +347,25 @@
 			name = Storage;
 			sourceTree = "<group>";
 		};
-		B899FE3D9FBB303234AE3644 /* Frameworks */ = {
+		A3A5D837DD33EC12E65964D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CADCAE6F16000724E4A0E157 /* Pods_TodaysReactiveMenu.framework */,
-				D5B6D4383C9CBF820A62AB09 /* Pods_TodaysReactiveMenuWatch_Extension.framework */,
+				BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */,
+				5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */,
+				C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E4175665269B42B27940B133 /* Pods */ = {
+		D56F61A43ACA5F948319A354 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				61CB18DB7AEDAF0488A4522C /* Pods-TodaysReactiveMenu.debug.xcconfig */,
-				DF4B3C016B42F7FEA007C0B3 /* Pods-TodaysReactiveMenu.release.xcconfig */,
-				951C01B83F8271AA7A17B93D /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */,
-				48632B2AF1E2F25E22C80C48 /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */,
+				059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */,
+				3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */,
+				2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */,
+				E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */,
+				4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */,
+				62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -350,6 +379,7 @@
 			buildPhases = (
 				3A29EB221BB828B10053207C /* Resources */,
 				3A29EB4C1BB828B10053207C /* Embed App Extensions */,
+				3BBD6223E0A187D97B9C3D5C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -365,11 +395,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A29EB4B1BB828B10053207C /* Build configuration list for PBXNativeTarget "TodaysReactiveMenuWatch Extension" */;
 			buildPhases = (
+				2393C6A759B9E52BF6B4F853 /* Check Pods Manifest.lock */,
 				3A29EB2C1BB828B10053207C /* Sources */,
 				3A29EB2D1BB828B10053207C /* Frameworks */,
 				3A29EB2E1BB828B10053207C /* Resources */,
-				EEBB290FFA773A9557A355B1 /* Copy Pods Resources */,
-				5EBF6F356FF368CCD0726380 /* Embed Pods Frameworks */,
+				6B0FB457EE0A535FBA92BE0A /* Embed Pods Frameworks */,
+				2A84FF0ABCA5CD9B6134E440 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,15 +415,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB0EEA81B120DCE0065C13F /* Build configuration list for PBXNativeTarget "TodaysReactiveMenu" */;
 			buildPhases = (
-				5B99580388F1D9F388497A21 /* Check Pods Manifest.lock */,
+				1CB1DB59565B2C67E69FC592 /* Check Pods Manifest.lock */,
 				3AB0EE851B120DCD0065C13F /* Sources */,
 				3AB0EE861B120DCD0065C13F /* Frameworks */,
 				3AB0EE871B120DCD0065C13F /* Resources */,
 				3AB0EEC81B120FA30065C13F /* Embed Frameworks */,
-				5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */,
-				0765021627F64039F8385948 /* Embed Pods Frameworks */,
 				3ABD432A1BE28E1900B13DC8 /* Fabric */,
 				3A29EB4E1BB828B10053207C /* Embed Watch Content */,
+				70DE92E8E77047CA3D2733F1 /* Embed Pods Frameworks */,
+				0250D9FFCF6355CCC3D83524 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -408,9 +439,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB0EEAB1B120DCE0065C13F /* Build configuration list for PBXNativeTarget "TodaysReactiveMenuTests" */;
 			buildPhases = (
+				FB2FBEC65252C3AED8B6CC14 /* Check Pods Manifest.lock */,
 				3AB0EE9A1B120DCD0065C13F /* Sources */,
 				3AB0EE9B1B120DCD0065C13F /* Frameworks */,
 				3AB0EE9C1B120DCD0065C13F /* Resources */,
+				601DBB3BBD2AAB067EF843B8 /* Embed Pods Frameworks */,
+				3CD182D52CDAB37EB7232D6C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -514,19 +548,64 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0765021627F64039F8385948 /* Embed Pods Frameworks */ = {
+		0250D9FFCF6355CCC3D83524 /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1CB1DB59565B2C67E69FC592 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2393C6A759B9E52BF6B4F853 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2A84FF0ABCA5CD9B6134E440 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3ABD432A1BE28E1900B13DC8 /* Fabric */ = {
@@ -544,7 +623,7 @@
 			shellScript = "${PODS_ROOT}/Fabric/run 5f095c6cf69ef78431ca2b6d3acb22046943d86c 11eb32ecf282167f8f9da27a7c86c7df1529606c7847150cf5fa0138133cf88e";
 			showEnvVarsInLog = 0;
 		};
-		5379EBAAB43DE8A04309D1F1 /* Copy Pods Resources */ = {
+		3CD182D52CDAB37EB7232D6C /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -556,25 +635,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5B99580388F1D9F388497A21 /* Check Pods Manifest.lock */ = {
+		601DBB3BBD2AAB067EF843B8 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5EBF6F356FF368CCD0726380 /* Embed Pods Frameworks */ = {
+		6B0FB457EE0A535FBA92BE0A /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -589,19 +668,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EEBB290FFA773A9557A355B1 /* Copy Pods Resources */ = {
+		70DE92E8E77047CA3D2733F1 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FB2FBEC65252C3AED8B6CC14 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -615,10 +709,15 @@
 				3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
 				3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */,
+				3A3F77701C57DFA2003AE95E /* Archivable.swift in Sources */,
 				3A29EB3A1BB828B10053207C /* ExtensionDelegate.swift in Sources */,
 				3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */,
 				3A29EB381BB828B10053207C /* InterfaceController.swift in Sources */,
+				3A6C4D6A1C55174E00346F3B /* WatchService.swift in Sources */,
+				3A3F776F1C57DF9F003AE95E /* Formattable.swift in Sources */,
+				3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */,
 				3A29EB3E1BB828B10053207C /* GlanceController.swift in Sources */,
+				3AC7C2AE1C594E90008A4B3F /* RemoteResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +729,9 @@
 				3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */,
 				3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */,
 				3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */,
+				3A492DC51C57D72E0017209A /* Archivable.swift in Sources */,
+				3A492DC71C57D87F0017209A /* Formattable.swift in Sources */,
+				3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */,
 				3A7B52751B13071100C0F539 /* MenuService.swift in Sources */,
 				3A9912921BBC4F1A0064777E /* WatchService.swift in Sources */,
 				3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */,
@@ -723,7 +825,7 @@
 		};
 		3A29EB491BB828B10053207C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 951C01B83F8271AA7A17B93D /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */;
+			baseConfigurationReference = 4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -743,7 +845,7 @@
 		};
 		3A29EB4A1BB828B10053207C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 48632B2AF1E2F25E22C80C48 /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */;
+			baseConfigurationReference = 62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -847,7 +949,7 @@
 		};
 		3AB0EEA91B120DCE0065C13F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 61CB18DB7AEDAF0488A4522C /* Pods-TodaysReactiveMenu.debug.xcconfig */;
+			baseConfigurationReference = 059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -866,7 +968,7 @@
 		};
 		3AB0EEAA1B120DCE0065C13F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF4B3C016B42F7FEA007C0B3 /* Pods-TodaysReactiveMenu.release.xcconfig */;
+			baseConfigurationReference = 3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -885,6 +987,7 @@
 		};
 		3AB0EEAC1B120DCE0065C13F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -901,6 +1004,7 @@
 		};
 		3AB0EEAD1B120DCE0065C13F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";

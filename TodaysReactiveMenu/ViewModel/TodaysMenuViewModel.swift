@@ -12,7 +12,7 @@ import ReactiveCocoa
 
 struct TodaysMenuViewModel {
     
-    private var menuService: MenuService
+    private let menuAPI: RemoteAPI
     private var watchService: WatchService?
     private let menuNotReadyMsg     = "The chef is working hard on getting Today's Menu ready. Please come back later."
     private let fetchMenuErrorMsg   = "Something went wrong in the kitchen. Please come back later."
@@ -30,12 +30,12 @@ struct TodaysMenuViewModel {
     
     // MARK: Object Life Cycle -
     
-    init(menuService: MenuService) {
-        self.init(menuService: menuService, watchService: nil)
+    init(menuAPI: RemoteAPI) {
+        self.init(menuAPI: menuAPI, watchService: nil)
     }
     
-    init(menuService: MenuService, watchService: WatchService?) {
-        self.menuService = menuService
+    init(menuAPI: RemoteAPI, watchService: WatchService?) {
+        self.menuAPI = menuAPI
         self.watchService = watchService
         
         // Setup RAC bindings.
@@ -48,14 +48,22 @@ struct TodaysMenuViewModel {
     func setupBindings() {
         
         // Handle view being active/inactive
-        let active = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil).toSignalProducer()
+        let active = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil)
+            .toSignalProducer()
             .map { _ in
                 true
             }
+            .mapError { _ in
+                return APIError.RequestFailed
+            }
         
-        let inactive = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationWillResignActiveNotification, object: nil).toSignalProducer()
+        let inactive = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationWillResignActiveNotification, object: nil)
+            .toSignalProducer()
             .map { _ in
                 false
+            }
+            .mapError { _ in
+                return APIError.RequestFailed
             }
         
 
@@ -63,8 +71,26 @@ struct TodaysMenuViewModel {
         merge([active, inactive])
             .filter { $0 }
             .flatMap(.Latest) { _ in
-                return self.menuService.fetchTodaysMenu()
-            }
+                Menu.loadUsingIdentifier("menu")
+                    .flatMapError { _ in
+                        return self.menuAPI.latestMenu()
+                            .flatMap(.Latest) { JSON in
+                                return Menu.deserializeFromJSON(JSON)
+                                    .mapError { error in
+                                        return APIError.SerializationFailed
+                                    }
+                            }
+                    }
+                }
+                .flatMap(.Latest) { menu in
+                    return menu.saveUsingIdentifier("menu")
+                        .map { _ in
+                            return menu
+                        }
+                        .mapError { error in
+                            return APIError.SerializationFailed
+                        }
+                }
             .startWithSignal { signal, disposable in
             
                 // TODO: Figure out how to make this more declarative.
@@ -122,15 +148,15 @@ struct TodaysMenuViewModel {
                 shouldHideMenu || !cakeToday
             }
         
-        // Send a fetched menu to the watch (if watch service is defined)
-        // TODO: Make this more declarative.
-        self.menu.producer
-            .ignoreNil()
-            .startWithNext { menu in
-                if let service = self.watchService {
-                    service.sendMenu(menu)
-                }
-            }
+//        // Send a fetched menu to the watch (if watch service is defined)
+//        // TODO: Make this more declarative.
+//        self.menu.producer
+//            .ignoreNil()
+//            .startWithNext { menu in
+//                if let service = self.watchService {
+//                    service.sendMenu(menu)
+//                }
+//            }
 
     }
 

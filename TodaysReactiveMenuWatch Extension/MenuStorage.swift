@@ -7,7 +7,7 @@
 //
 
 import WatchKit
-import ObjectMapper
+import Unbox
 
 
 enum MenuError: ErrorType {
@@ -26,8 +26,13 @@ struct MenuStorage {
     
     func loadMenu() throws -> Menu {
     
+        // Fetch the saved data.
+        guard let data = NSUserDefaults.standardUserDefaults().objectForKey(storeKey) as? Dictionary<String, AnyObject> else {
+            throw MenuError.MenuNotReady
+        }
+    
         // Let's make sure that we can fetch a menu from the local storage.
-        guard let menu = Mapper<Menu>().map(NSUserDefaults.standardUserDefaults().objectForKey(storeKey)) else {
+        guard let menu: Menu = Unbox(data) else {
             throw MenuError.MenuNotReady
         }
         

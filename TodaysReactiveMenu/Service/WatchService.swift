@@ -8,7 +8,7 @@
 
 import Foundation
 import WatchConnectivity
-import ObjectMapper
+
 
 class WatchService: NSObject, WCSessionDelegate {
 
@@ -25,14 +25,15 @@ class WatchService: NSObject, WCSessionDelegate {
 
     func sendMenu(menu: Menu) {
     
-        // Make sure that the session is up and running.
-        if (sessionStarted) {
-            do {
-                try session?.updateApplicationContext(Mapper().toJSON(menu))
-            } catch let error {
-                print("Failed to send menu to Watch: \(error)")
-            }
-        }
+//        // Make sure that the session is up and running.
+//        if (sessionStarted) {
+//            do {
+////                try session?.updateApplicationContext(Mapper().toJSON(menu))
+//                    // TODO: how?
+//            } catch let error {
+//                print("Failed to send menu to Watch: \(error)")
+//            }
+//        }
     
     }
 

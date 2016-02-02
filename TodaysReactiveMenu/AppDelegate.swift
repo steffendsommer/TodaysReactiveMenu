@@ -16,7 +16,7 @@ import Crashlytics
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let menuService = MenuService()
+    let menuAPI = TodaysMenuAPI()
     let watchService = WatchService()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -37,7 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
-            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuService: self.menuService, watchService: self.watchService))
+            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuAPI: self.menuAPI, watchService: self.watchService))
             window.makeKeyAndVisible()
         }
         return true
@@ -45,12 +45,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
-        let deviceTokenString: String = ( deviceToken.description as NSString )
-                                            .stringByTrimmingCharactersInSet( characterSet )
-                                            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+//        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+//        let deviceTokenString: String = ( deviceToken.description as NSString )
+//                                            .stringByTrimmingCharactersInSet( characterSet )
+//                                            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
-        self.menuService.submitPushToken(deviceTokenString)
+//        self.menuService.submitPushToken(deviceTokenString)
+//            .startWithFailed { error in
+//                print("Failed to register push token.")
+//            }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -59,14 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
         // Push received while being in background mode. Fetch the menu and send it to the watch.
-        self.menuService.fetchTodaysMenu().startWithNext { value in
-            if let menu = value as Menu? {
-                self.watchService.sendMenu(menu)
-                completionHandler(UIBackgroundFetchResult.NewData)
-            } else {
-                completionHandler(UIBackgroundFetchResult.NoData)
-            }
-        }
+//        self.menuService.fetchTodaysMenu().startWithNext { value in
+//            if let menu = value as Menu? {
+//                self.watchService.sendMenu(menu)
+//                completionHandler(UIBackgroundFetchResult.NewData)
+//            } else {
+//                completionHandler(UIBackgroundFetchResult.NoData)
+//            }
+//        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

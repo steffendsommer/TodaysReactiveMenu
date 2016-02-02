@@ -8,7 +8,6 @@
 
 import WatchKit
 import WatchConnectivity
-import ObjectMapper
 
 
 class PhoneService: NSObject, WCSessionDelegate {
