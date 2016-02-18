@@ -46,6 +46,7 @@ struct TodaysMenuAPI: RemoteAPI {
                             return
                         }
                     
+                        print("menu downloaded")
                         observer.sendNext(JSON.first!)
                         observer.sendCompleted()
                     

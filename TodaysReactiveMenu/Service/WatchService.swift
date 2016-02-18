@@ -23,7 +23,7 @@ class WatchService: NSObject, WCSessionDelegate {
         }
     }
 
-    func sendMenu(menu: Menu) {
+//    func sendMenu(menu: Menu) {
     
 //        // Make sure that the session is up and running.
 //        if (sessionStarted) {
@@ -35,6 +35,6 @@ class WatchService: NSObject, WCSessionDelegate {
 //            }
 //        }
     
-    }
+//    }
 
 }

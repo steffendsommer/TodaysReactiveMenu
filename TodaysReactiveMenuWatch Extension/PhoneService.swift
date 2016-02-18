@@ -12,7 +12,7 @@ import WatchConnectivity
 
 class PhoneService: NSObject, WCSessionDelegate {
 
-    private var menuStorage: MenuStorage?
+//    private var menuStorage: MenuStorage?
     
     private let session: WCSession? = WCSession.isSupported() ? WCSession.defaultSession() : nil
     private var sessionStarted = false
@@ -20,9 +20,9 @@ class PhoneService: NSObject, WCSessionDelegate {
 
     // MARK: - Object Life Cycle
 
-    init(menuStorage: MenuStorage) {
-        self.menuStorage = menuStorage
-    }
+//    init(menuStorage: MenuStorage) {
+//        self.menuStorage = menuStorage
+//    }
 
 
     // MARK: - Public Methods
@@ -40,7 +40,7 @@ class PhoneService: NSObject, WCSessionDelegate {
     
     func session(session: WCSession, didReceiveApplicationContext applicationContext: [String : AnyObject]) {
         // Persist the menu (if storage class has been given).
-        menuStorage?.saveMenu(applicationContext)
+//        menuStorage?.saveMenu(applicationContext)
     }
 
 }

@@ -48,6 +48,7 @@ extension Archivable where Self: Formattable {
                 return
             }
             
+            print("menu loaded")
             observer.sendNext(data)
             observer.sendCompleted()
         }

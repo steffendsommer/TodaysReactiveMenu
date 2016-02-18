@@ -41,7 +41,7 @@ struct TodaysMenuViewModel {
         // Setup RAC bindings.
         self.setupBindings()
     }
-    
+
     
     // MARK: RAC Bindings -
     
@@ -53,71 +53,36 @@ struct TodaysMenuViewModel {
             .map { _ in
                 true
             }
-            .mapError { _ in
-                return APIError.RequestFailed
-            }
         
         let inactive = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationWillResignActiveNotification, object: nil)
             .toSignalProducer()
             .map { _ in
                 false
             }
+
+
+        let fetchMenu = Menu.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
+
+        let menuProducer = merge([active, inactive])
+            .filter { $0 }
             .mapError { _ in
-                return APIError.RequestFailed
+                return Menu.FetchMenuError.UnknownError
             }
+            .flatMap(.Latest) { _ in
+                return fetchMenu
+            }
+            .replayLazily(1)
         
 
-        // Fetch the menu every time the view gets active. Multicast the signal to avoid subscribers causing the menu being fetches multiple times.
-        merge([active, inactive])
-            .filter { $0 }
-            .flatMap(.Latest) { _ in
-                Menu.loadUsingIdentifier("menu")
-                    .flatMapError { _ in
-                        return self.menuAPI.latestMenu()
-                            .flatMap(.Latest) { JSON in
-                                return Menu.deserializeFromJSON(JSON)
-                                    .mapError { error in
-                                        return APIError.SerializationFailed
-                                    }
-                            }
-                    }
-                }
-                .flatMap(.Latest) { menu in
-                    return menu.saveUsingIdentifier("menu")
-                        .map { _ in
-                            return menu
-                        }
-                        .mapError { error in
-                            return APIError.SerializationFailed
-                        }
-                }
-            .startWithSignal { signal, disposable in
-            
-                // TODO: Figure out how to make this more declarative.
-                signal.observe { event in
-                    switch event {
-                        case let .Next(fetchedMenu):
-                            self.menu.value = fetchedMenu
-                        case .Failed(_):
-                            self.mainCourse.value = self.fetchMenuErrorMsg
-                        default:
-                            break
-                    }
-                }
-            }
-
-
         // Make sure, we're only showing the menu when it's actually the menu of today.
-        self.shouldHideMenu <~ self.menu.producer
-            .ignoreNil()
+        self.shouldHideMenu <~ menuProducer
+            .ignoreError()
             .map { menu in
                 !menu.isTodaysMenu()
             }
 
-
         // Make sure to display some informative messages if the menu cannot be fetched.
-        self.mainCourse <~ self.menu.producer
-            .ignoreNil()
+        self.mainCourse <~ menuProducer
             .map { fetchedMenu in
                 if (fetchedMenu.isTodaysMenu()) {
                     return fetchedMenu.mainCourse!
@@ -125,20 +90,19 @@ struct TodaysMenuViewModel {
                     return self.menuNotReadyMsg
                 }
             }
+            .flatMapError { _ in
+                return SignalProducer<String, NoError>(value: self.fetchMenuErrorMsg)
+            }
 
-
-        self.sides <~ self.menu.producer
+        self.sides <~ menuProducer
             .ignoreError()
-            .ignoreNil()
             .map { menu in
                 menu.sides!
             }
         
-        
         // Handle the showing of the cake banner.
-        let anyCake = self.menu.producer
+        let anyCake = menuProducer
             .ignoreError()
-            .ignoreNil()
             .map { menu in
                 menu.cake!
             }
@@ -147,16 +111,6 @@ struct TodaysMenuViewModel {
             .map { shouldHideMenu, cakeToday in
                 shouldHideMenu || !cakeToday
             }
-        
-//        // Send a fetched menu to the watch (if watch service is defined)
-//        // TODO: Make this more declarative.
-//        self.menu.producer
-//            .ignoreNil()
-//            .startWithNext { menu in
-//                if let service = self.watchService {
-//                    service.sendMenu(menu)
-//                }
-//            }
 
     }
 

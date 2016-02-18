@@ -29,6 +29,68 @@ final class Menu: Unboxable, Archivable, Formattable {
 }
 
 
+// MARK: - Helpers -
+
+extension Menu {
+
+    private func dateFormatter() -> NSDateFormatter {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        return dateFormatter
+    }
+    
+    enum FetchMenuError: ErrorType {
+        case UnknownError
+        case APIError
+        case CacheError
+    }
+    
+    static func fetchTodaysMenuFromCacheOrRemote(menuAPI: RemoteAPI) -> SignalProducer<Menu, FetchMenuError> {
+    
+        let cacheSharedIdentifier = "menu"
+    
+        // Download latest menu and deserialize into a menu instance.
+        let fetchMenuFromRemote = menuAPI.latestMenu()
+            .mapError { _ in
+                return FetchMenuError.APIError
+            }
+            .flatMap(.Latest) { JSON in
+                return Menu.deserializeFromJSON(JSON)
+                    .mapError { error in
+                        return FetchMenuError.APIError
+                    }
+            }
+        
+        let fetchMenuFromCache = Menu.loadUsingIdentifier(cacheSharedIdentifier)
+            .mapError { _ in
+                return FetchMenuError.CacheError
+            }
+
+        let fetchMenuFromCacheOrRemote = fetchMenuFromCache
+            .flatMap(.Latest) { menu in
+                return menu.isTodaysMenu() ? SignalProducer<Menu, FetchMenuError>(value: menu) : fetchMenuFromRemote
+            }
+            .flatMapError { error in
+                return (error == FetchMenuError.CacheError) ? fetchMenuFromRemote : SignalProducer<Menu, FetchMenuError>(error: error)
+            }
+
+        return fetchMenuFromCacheOrRemote
+            .flatMap(.Latest) { menu in
+                return menu.saveUsingIdentifier(cacheSharedIdentifier)
+                    .map { _ in
+                        return menu
+                    }
+                    .flatMapError { _ in
+                        return SignalProducer<Menu, FetchMenuError>(value: menu)
+                    }
+            }
+    }
+    
+}
+
+
+// MARK: - Unboxable extension -
+
 extension Menu {
 
     // Unbox extension.
@@ -41,7 +103,13 @@ extension Menu {
         self.servedAt = unboxer.unbox("serving_date", formatter: self.dateFormatter())
     }
     
-    // Formattable extension
+}
+
+
+// MARK: - Formattable extension -
+
+extension Menu {
+
     func serialize() -> SignalProducer<[String: AnyObject], FormattableError> {
         return SignalProducer<[String: AnyObject], FormattableError>(value: [
             "link": self.link,
@@ -52,10 +120,5 @@ extension Menu {
         ])
     }
     
-    private func dateFormatter() -> NSDateFormatter {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        return dateFormatter
-    }
-    
 }
+

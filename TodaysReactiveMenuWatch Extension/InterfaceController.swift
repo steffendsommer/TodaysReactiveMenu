@@ -8,7 +8,7 @@
 
 import WatchKit
 import Foundation
-import ReactiveCocoa
+//import ReactiveCocoa
 
 
 class InterfaceController: WKInterfaceController {
@@ -16,7 +16,7 @@ class InterfaceController: WKInterfaceController {
     @IBOutlet var mainCourse: WKInterfaceLabel?
     @IBOutlet var sides: WKInterfaceLabel?
     
-    private let menu = MutableProperty<Menu?>(nil)
+//    private let menu = MutableProperty<Menu?>(nil)
     private let menuNotReadyMsg = "The chef is working on it. Please come back later."
     private let fetchMenuErrorMsg   = "Something went wrong in the kitchen. Please come back later."
 //    private var menuStorage = MenuStorage()

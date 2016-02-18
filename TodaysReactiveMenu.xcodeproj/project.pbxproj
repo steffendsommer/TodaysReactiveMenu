@@ -18,8 +18,6 @@
 		3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A29EB3F1BB828B10053207C /* ComplicationController.swift */; };
 		3A29EB421BB828B10053207C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB411BB828B10053207C /* Assets.xcassets */; };
 		3A29EB461BB828B10053207C /* TodaysReactiveMenuWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */; };
-		3A3F776F1C57DF9F003AE95E /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
-		3A3F77701C57DFA2003AE95E /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A492DC51C57D72E0017209A /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A492DC71C57D87F0017209A /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
 		3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52741B13071100C0F539 /* MenuService.swift */; };
@@ -30,7 +28,6 @@
 		3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */; };
 		3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */; };
 		3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
-		3A80207B1B602AD200AED403 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3A80207A1B602AD200AED403 /* GoogleService-Info.plist */; };
 		3A9912921BBC4F1A0064777E /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9912911BBC4F1A0064777E /* WatchService.swift */; };
 		3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */; };
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
@@ -38,9 +35,7 @@
 		3AB0EEA51B120DCD0065C13F /* TodaysReactiveMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */; };
 		3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */; };
 		3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7ACF21BE0A605000149DF /* MenuStorage.swift */; };
-		3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
 		3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
-		3AC7C2AE1C594E90008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
 		55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */; };
 		CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */; };
 /* End PBXBuildFile section */
@@ -534,7 +529,6 @@
 			files = (
 				3AB0EE991B120DCD0065C13F /* LaunchScreen.xib in Resources */,
 				3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */,
-				3A80207B1B602AD200AED403 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,16 +702,12 @@
 				3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */,
 				3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
-				3AC7ACF51BE0A886000149DF /* Menu.swift in Sources */,
-				3A3F77701C57DFA2003AE95E /* Archivable.swift in Sources */,
 				3A29EB3A1BB828B10053207C /* ExtensionDelegate.swift in Sources */,
 				3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */,
 				3A29EB381BB828B10053207C /* InterfaceController.swift in Sources */,
 				3A6C4D6A1C55174E00346F3B /* WatchService.swift in Sources */,
-				3A3F776F1C57DF9F003AE95E /* Formattable.swift in Sources */,
 				3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */,
 				3A29EB3E1BB828B10053207C /* GlanceController.swift in Sources */,
-				3AC7C2AE1C594E90008A4B3F /* RemoteResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

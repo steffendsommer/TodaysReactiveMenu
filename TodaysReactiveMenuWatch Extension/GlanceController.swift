@@ -17,29 +17,29 @@ class GlanceController: WKInterfaceController {
     private let menuNotReadyMsg = "The chef is working on it. Please come back later."
     private var menuStorage = MenuStorage()
     
-    var menu: Menu? {
-        didSet {
-            self.mainCourse?.setText(menu?.mainCourse)
-        }
-    }
+//    var menu: Menu? {
+//        didSet {
+//            self.mainCourse?.setText(menu?.mainCourse)
+//        }
+//    }
     
 
     // MARK: - View Life Cycle
 
     override func willActivate() {
         // Setup menu.
-        fetchMenu()
+//        fetchMenu()
     }
     
     
     // MARK: - Helpers
     
-    func fetchMenu() {
-        do {
-            try self.menu = menuStorage.loadMenu()
-        } catch {
-            self.mainCourse?.setText(menuNotReadyMsg)
-        }
-    }
+//    func fetchMenu() {
+//        do {
+//            try self.menu = menuStorage.loadMenu()
+//        } catch {
+//            self.mainCourse?.setText(menuNotReadyMsg)
+//        }
+//    }
 
 }
