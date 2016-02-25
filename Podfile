@@ -4,7 +4,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-    pod 'ReactiveCocoa', '4.0.0'
+    pod 'ReactiveCocoa', '4.0.1'
     pod 'Alamofire', '~> 3.1.4'
     pod 'Unbox', '~> 1.3'
 end

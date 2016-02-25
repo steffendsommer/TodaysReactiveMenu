@@ -4,18 +4,18 @@ PODS:
     - Fabric (~> 1.6.0)
   - Fabric (1.6.1)
   - PureLayout (3.0.1)
-  - ReactiveCocoa (4.0.0):
-    - ReactiveCocoa/UI (= 4.0.0)
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/Core (4.0.0):
+  - ReactiveCocoa (4.0.1):
+    - ReactiveCocoa/UI (= 4.0.1)
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/Core (4.0.1):
     - ReactiveCocoa/no-arc
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/no-arc (4.0.0):
-    - Result (~> 1.0.1)
-  - ReactiveCocoa/UI (4.0.0):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/no-arc (4.0.1):
+    - Result (~> 1.0.2)
+  - ReactiveCocoa/UI (4.0.1):
     - ReactiveCocoa/Core
-    - Result (~> 1.0.1)
-  - Result (1.0.1)
+    - Result (~> 1.0.2)
+  - Result (1.0.2)
   - Unbox (1.3)
 
 DEPENDENCIES:
@@ -23,7 +23,7 @@ DEPENDENCIES:
   - Crashlytics (~> 3.4.0)
   - Fabric (~> 1.6.0)
   - PureLayout (~> 3.0.1)
-  - ReactiveCocoa (= 4.0.0)
+  - ReactiveCocoa (= 4.0.1)
   - Unbox (~> 1.3)
 
 SPEC CHECKSUMS:
@@ -31,10 +31,10 @@ SPEC CHECKSUMS:
   Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  ReactiveCocoa: 69be555be30674b07a86b60a91b855063841acc0
-  Result: caef80340451e1f07492fa1e89117f83613bce24
+  ReactiveCocoa: f7011630aee4deeb16352fcb1b50d6bde9db4f90
+  Result: dd3dd71af3fa2e262f1a999e14fba2c25ec14f16
   Unbox: af6e75fddb73ee790c80114bf7b6edef56a0dcd8
 
-PODFILE CHECKSUM: 88d712ec84df97988fafe5fd9b2bc48abd1a925e
+PODFILE CHECKSUM: e4fb0526b195e6d8d45105af5f1c7f2a37a08f75
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.0.0.beta.4
