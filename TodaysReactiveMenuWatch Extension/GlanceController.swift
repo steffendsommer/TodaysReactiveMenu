@@ -8,38 +8,35 @@
 
 import WatchKit
 import Foundation
+import ReactiveCocoa
 
 
-class GlanceController: WKInterfaceController {
+class GlanceController: WKInterfaceController, MVVMViewResource {
 
     @IBOutlet var mainCourse: WKInterfaceLabel?
     
-    private let menuNotReadyMsg = "The chef is working on it. Please come back later."
-    private var menuStorage = MenuStorage()
-    
-//    var menu: Menu? {
-//        didSet {
-//            self.mainCourse?.setText(menu?.mainCourse)
-//        }
-//    }
+    var viewModel = TodaysMenuViewModel(menuAPI: TodaysMenuAPI())
     
 
     // MARK: - View Life Cycle
 
-    override func willActivate() {
-        // Setup menu.
-//        fetchMenu()
+    override init() {
+        super.init()
+        
+        self.setupBindings()
     }
     
     
-    // MARK: - Helpers
+    // MARK: - RAC Bindings
     
-//    func fetchMenu() {
-//        do {
-//            try self.menu = menuStorage.loadMenu()
-//        } catch {
-//            self.mainCourse?.setText(menuNotReadyMsg)
-//        }
-//    }
-
+    func setupBindings() {
+    
+        self.setupViewBindings()
+    
+        self.viewModel.mainCourse.producer
+            .observeOn(UIScheduler())
+            .startWithNext { mainCourse in
+                self.mainCourse?.setText(mainCourse)
+        }
+    }
 }

@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let menuAPI = TodaysMenuAPI()
-    let watchService = WatchService()
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
@@ -30,30 +29,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.registerUserNotificationSettings(settings)
         application.registerForRemoteNotifications()
         
-        // Activate a `WCSession` for communicating with the Apple Watch.
-        self.watchService.startSession()
-        
         // Setup initial view
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         if let window = window {
             window.backgroundColor = UIColor.whiteColor()
-            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuAPI: self.menuAPI, watchService: self.watchService))
+            window.rootViewController = TodaysMenuViewController(viewModel: TodaysMenuViewModel(menuAPI: self.menuAPI))
             window.makeKeyAndVisible()
         }
         return true
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
+        let deviceTokenString: String = ( deviceToken.description as NSString )
+                                            .stringByTrimmingCharactersInSet( characterSet )
+                                            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         
-//        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
-//        let deviceTokenString: String = ( deviceToken.description as NSString )
-//                                            .stringByTrimmingCharactersInSet( characterSet )
-//                                            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        self.menuAPI.submitPushToken(deviceTokenString)
+            .startWithFailed { error in
+                print("Failed to register push token.")
+            }
         
-//        self.menuService.submitPushToken(deviceTokenString)
-//            .startWithFailed { error in
-//                print("Failed to register push token.")
-//            }
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -61,15 +58,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        // Push received while being in background mode. Fetch the menu and send it to the watch.
-//        self.menuService.fetchTodaysMenu().startWithNext { value in
-//            if let menu = value as Menu? {
-//                self.watchService.sendMenu(menu)
-//                completionHandler(UIBackgroundFetchResult.NewData)
-//            } else {
-//                completionHandler(UIBackgroundFetchResult.NoData)
-//            }
-//        }
+        
+        // Push received while being in background mode. Fetch the menu so it's loaded when the app gets opened.
+        Menu.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
+            .start { event in
+                switch event {
+                    case .Next(_):
+                        completionHandler(UIBackgroundFetchResult.NewData)
+                        break
+                    default:
+                        completionHandler(UIBackgroundFetchResult.NoData)
+                        break
+                }
+            }
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

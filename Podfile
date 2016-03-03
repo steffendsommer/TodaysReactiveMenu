@@ -25,5 +25,5 @@ end
 target 'TodaysReactiveMenuWatch Extension' do
     platform :watchos, '2.0'
     
-    #shared_pods
+    shared_pods
 end

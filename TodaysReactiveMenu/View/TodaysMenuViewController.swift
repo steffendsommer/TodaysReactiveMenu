@@ -11,10 +11,10 @@ import PureLayout
 import ReactiveCocoa
 
 
-class TodaysMenuViewController: UIViewController {
+class TodaysMenuViewController: UIViewController, MVVMViewResource {
 
-    private var viewModel: TodaysMenuViewModel
-    
+    var viewModel: TodaysMenuViewModel
+        
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
     private let headline        = UILabel()
     private let subHeadline     = UILabel()
@@ -139,6 +139,8 @@ class TodaysMenuViewController: UIViewController {
     // MARK: - RAC Bindings
     
     func setupBindings() {
+        self.setupViewBindings()
+    
         self.headline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
         self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
         self.sides.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())

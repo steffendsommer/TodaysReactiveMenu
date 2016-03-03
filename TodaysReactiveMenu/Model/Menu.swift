@@ -45,7 +45,7 @@ extension Menu {
         case CacheError
     }
     
-    static func fetchTodaysMenuFromCacheOrRemote(menuAPI: RemoteAPI) -> SignalProducer<Menu, FetchMenuError> {
+    static func fetchTodaysMenuFromCacheOrRemote(menuAPI: RemoteResource) -> SignalProducer<Menu, FetchMenuError> {
     
         let cacheSharedIdentifier = "menu"
     

@@ -8,28 +8,16 @@
 
 import WatchKit
 import Foundation
-//import ReactiveCocoa
+import ReactiveCocoa
+import Result
 
 
-class InterfaceController: WKInterfaceController {
+class InterfaceController: WKInterfaceController, MVVMViewResource {
 
     @IBOutlet var mainCourse: WKInterfaceLabel?
     @IBOutlet var sides: WKInterfaceLabel?
     
-//    private let menu = MutableProperty<Menu?>(nil)
-    private let menuNotReadyMsg = "The chef is working on it. Please come back later."
-    private let fetchMenuErrorMsg   = "Something went wrong in the kitchen. Please come back later."
-//    private var menuStorage = MenuStorage()
-//    private let menuService = MenuService()
-    
-//    private let viewModel = TodaysMenuViewModel(menuService: MenuService())
-    
-//    var menu: Menu? {
-//        didSet {
-//            self.mainCourse?.setText(menu?.mainCourse)
-//            self.sides?.setText(menu?.sides)
-//        }
-//    }
+    var viewModel = TodaysMenuViewModel(menuAPI: TodaysMenuAPI())
 
     
     // MARK: - View Life Cycle
@@ -40,77 +28,24 @@ class InterfaceController: WKInterfaceController {
         self.setupBindings()
     }
     
-//    override func willActivate() {
-//        // Setup menu.
-//        fetchMenu()
-//    }
-    
     
     // MARK: - RAC Bindings
     
     func setupBindings() {
     
-//        self.menu <~ self.rac_signalForSelector(Selector(willActivate()))
-//            .toSignalProducer()
-//            .flatMap(.Latest) { _ in
-//                return self.menuService.fetchTodaysMenu()
-//            }
+        self.setupViewBindings()
     
-        // The idea:
-        // 1) get menu from cache (error if no found)
-        // 2) flatMapError into fetching it remotely (error if no found)
-        // 3) mapError into something like "menu not ready"
-    
-    
-//        self.menu.producer
-//            .ignoreNil()
-//            .observeOn(UIScheduler())
-//            .startWithNext { menu in
-//                if menu.isTodaysMenu() {
-//                    self.mainCourse?.setText(menu.mainCourse)
-//                    self.sides?.setText(menu.sides)
-//                } else {
-//                    self.mainCourse?.setText(self.menuNotReadyMsg)
-//                    self.sides?.setText("")
-//                }
-//            }
-//        
-//        self.rac_signalForSelector(Selector("willActivate"))
-//            .toSignalProducer()
-//            .flatMap(.Latest) { _ in
-//                return self.menuService.fetchTodaysMenu()
-//            }
-//            .startWithSignal { signal, disposable in
-//            
-//                // TODO: Figure out how to make this more declarative.
-//                signal.observe { event in
-//                    switch event {
-//                        case let .Next(fetchedMenu):
-//                            self.menu.value = fetchedMenu
-//                        case .Failed(_):
-//                            self.mainCourse?.setText(self.fetchMenuErrorMsg)
-//                        default:
-//                            break
-//                    }
-//                }
-//            }
+        self.viewModel.mainCourse.producer
+            .observeOn(UIScheduler())
+            .startWithNext { mainCourse in
+                self.mainCourse?.setText(mainCourse)
+        }
         
-    
-//        self.viewModel.headline.producer.observeOn(UIScheduler()).startWithNext { headline in
-//            self.mainCourse?.setText(headline)
-//        }
+        self.viewModel.sides.producer
+            .observeOn(UIScheduler())
+            .startWithNext { sides in
+                self.sides?.setText(sides)
+        }
     }
-    
-    
-    // MARK: - Helpers
-    
-//    func fetchMenu() {
-//        do {
-//            try self.menu = menuStorage.loadMenu()
-//        } catch {
-//            self.mainCourse?.setText(menuNotReadyMsg)
-//            self.sides?.setText("")
-//        }
-//    }
 
 }

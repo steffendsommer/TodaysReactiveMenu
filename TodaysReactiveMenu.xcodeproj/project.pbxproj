@@ -20,21 +20,27 @@
 		3A29EB461BB828B10053207C /* TodaysReactiveMenuWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */; };
 		3A492DC51C57D72E0017209A /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A492DC71C57D87F0017209A /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
-		3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52741B13071100C0F539 /* MenuService.swift */; };
-		3A6C4D6A1C55174E00346F3B /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9912911BBC4F1A0064777E /* WatchService.swift */; };
+		3A6ACB1C1C8877BA008D2838 /* MVVMViewResourceiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */; };
+		3A6ACB1E1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */; };
+		3A6ACB1F1C887809008D2838 /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */; };
 		3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
-		3A7B52751B13071100C0F539 /* MenuService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52741B13071100C0F539 /* MenuService.swift */; };
 		3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
 		3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */; };
 		3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */; };
 		3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
-		3A9912921BBC4F1A0064777E /* WatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9912911BBC4F1A0064777E /* WatchService.swift */; };
+		3A864CF01C870C7900C2FD2D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
+		3A864CF11C870C8400C2FD2D /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
+		3A864CF21C870C8600C2FD2D /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
+		3A864CF31C870C8900C2FD2D /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
+		3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
+		3A864CF51C87246300C2FD2D /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
+		3A864CF71C87321000C2FD2D /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */; };
+		3A864CF91C87349100C2FD2D /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */; };
+		3A864CFA1C87363B00C2FD2D /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */; };
 		3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */; };
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
 		3AB0EE991B120DCD0065C13F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE971B120DCD0065C13F /* LaunchScreen.xib */; };
 		3AB0EEA51B120DCD0065C13F /* TodaysReactiveMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */; };
-		3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */; };
-		3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7ACF21BE0A605000149DF /* MenuStorage.swift */; };
 		3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
 		55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */; };
 		CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */; };
@@ -117,14 +123,16 @@
 		3A29EB431BB828B10053207C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A492DC41C57D72E0017209A /* Archivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archivable.swift; sourceTree = "<group>"; };
 		3A492DC61C57D87F0017209A /* Formattable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
+		3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResourceiOS.swift; path = ../View/MVVMViewResourceiOS.swift; sourceTree = "<group>"; };
+		3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResourceWatchOS.swift; path = "../../TodaysReactiveMenuWatch Extension/MVVMViewResourceWatchOS.swift"; sourceTree = "<group>"; };
 		3A7B52721B1306FF00C0F539 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		3A7B52741B13071100C0F539 /* MenuService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuService.swift; sourceTree = "<group>"; };
 		3A7B52761B13071700C0F539 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
 		3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewController.swift; sourceTree = "<group>"; };
 		3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewModel.swift; sourceTree = "<group>"; };
 		3A80207A1B602AD200AED403 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3A9912911BBC4F1A0064777E /* WatchService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchService.swift; sourceTree = "<group>"; };
+		3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResource.swift; path = ../View/MVVMViewResource.swift; sourceTree = "<group>"; };
+		3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewModelResource.swift; path = ../ViewModel/MVVMViewModelResource.swift; sourceTree = "<group>"; };
 		3AB0EE891B120DCD0065C13F /* Today's Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Today's Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0EE8D1B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,8 +141,6 @@
 		3AB0EE9E1B120DCD0065C13F /* TodaysReactiveMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodaysReactiveMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0EEA31B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReactiveMenuTests.swift; sourceTree = "<group>"; };
-		3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneService.swift; sourceTree = "<group>"; };
-		3AC7ACF21BE0A605000149DF /* MenuStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuStorage.swift; sourceTree = "<group>"; };
 		3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
 		3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
 		4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -193,8 +199,6 @@
 		3A29EB341BB828B10053207C /* TodaysReactiveMenuWatch Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3ABD432E1BE2BD9C00B13DC8 /* Storage */,
-				3ABD432D1BE2BD9700B13DC8 /* Service */,
 				3A29EB371BB828B10053207C /* InterfaceController.swift */,
 				3A29EB391BB828B10053207C /* ExtensionDelegate.swift */,
 				3A29EB3B1BB828B10053207C /* NotificationController.swift */,
@@ -213,6 +217,17 @@
 				3A29EB361BB828B10053207C /* PushNotificationPayload.apns */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A6ACB201C888573008D2838 /* MVVMHelper */ = {
+			isa = PBXGroup;
+			children = (
+				3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */,
+				3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */,
+				3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */,
+				3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */,
+			);
+			name = MVVMHelper;
 			sourceTree = "<group>";
 		};
 		3AB0EE801B120DCD0065C13F = {
@@ -243,7 +258,6 @@
 			isa = PBXGroup;
 			children = (
 				3AB0EEB11B120F840065C13F /* Util */,
-				3AB0EEB01B120F840065C13F /* Service */,
 				3AB0EEAF1B120F840065C13F /* Model */,
 				3AB0EEB31B120F840065C13F /* ViewModel */,
 				3AB0EEB21B120F840065C13F /* View */,
@@ -292,18 +306,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		3AB0EEB01B120F840065C13F /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				3A7B52741B13071100C0F539 /* MenuService.swift */,
-				3A9912911BBC4F1A0064777E /* WatchService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
 		3AB0EEB11B120F840065C13F /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				3A6ACB201C888573008D2838 /* MVVMHelper */,
 				3A7B52761B13071700C0F539 /* RACHelpers.swift */,
 				3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */,
 			);
@@ -324,22 +330,6 @@
 				3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		3ABD432D1BE2BD9700B13DC8 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				3ABD432B1BE2AD3900B13DC8 /* PhoneService.swift */,
-			);
-			name = Service;
-			sourceTree = "<group>";
-		};
-		3ABD432E1BE2BD9C00B13DC8 /* Storage */ = {
-			isa = PBXGroup;
-			children = (
-				3AC7ACF21BE0A605000149DF /* MenuStorage.swift */,
-			);
-			name = Storage;
 			sourceTree = "<group>";
 		};
 		A3A5D837DD33EC12E65964D0 /* Frameworks */ = {
@@ -699,15 +689,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3ABD432C1BE2AD3900B13DC8 /* PhoneService.swift in Sources */,
-				3AC7ACF31BE0A605000149DF /* MenuStorage.swift in Sources */,
+				3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */,
+				3A864CF11C870C8400C2FD2D /* Archivable.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
 				3A29EB3A1BB828B10053207C /* ExtensionDelegate.swift in Sources */,
+				3A6ACB1E1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift in Sources */,
+				3A864CFA1C87363B00C2FD2D /* MVVMViewModelResource.swift in Sources */,
+				3A864CF01C870C7900C2FD2D /* Menu.swift in Sources */,
 				3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */,
 				3A29EB381BB828B10053207C /* InterfaceController.swift in Sources */,
-				3A6C4D6A1C55174E00346F3B /* WatchService.swift in Sources */,
-				3A4C49C71C552FF50002FC01 /* MenuService.swift in Sources */,
+				3A864CF21C870C8600C2FD2D /* Formattable.swift in Sources */,
+				3A6ACB1F1C887809008D2838 /* MVVMViewResource.swift in Sources */,
+				3A864CF51C87246300C2FD2D /* TodaysMenuViewModel.swift in Sources */,
 				3A29EB3E1BB828B10053207C /* GlanceController.swift in Sources */,
+				3A864CF31C870C8900C2FD2D /* RemoteResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,13 +712,14 @@
 			files = (
 				3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */,
 				3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */,
+				3A864CF71C87321000C2FD2D /* MVVMViewResource.swift in Sources */,
+				3A864CF91C87349100C2FD2D /* MVVMViewModelResource.swift in Sources */,
+				3A6ACB1C1C8877BA008D2838 /* MVVMViewResourceiOS.swift in Sources */,
 				3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */,
 				3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */,
 				3A492DC51C57D72E0017209A /* Archivable.swift in Sources */,
 				3A492DC71C57D87F0017209A /* Formattable.swift in Sources */,
 				3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */,
-				3A7B52751B13071100C0F539 /* MenuService.swift in Sources */,
-				3A9912921BBC4F1A0064777E /* WatchService.swift in Sources */,
 				3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */,
 				3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */,
 			);

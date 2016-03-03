@@ -24,16 +24,18 @@ enum APIError: ErrorType {
 }
 
 
-protocol RemoteAPI {
+protocol RemoteResource {
     func latestMenu() -> SignalProducer<[String: AnyObject], APIError>
     func submitPushToken(token: String) -> SignalProducer<Void, APIError>
 }
 
 
-struct TodaysMenuAPI: RemoteAPI {
+struct TodaysMenuAPI: RemoteResource {
+
+    let baseUrl = "https://todays-menu.herokuapp.com/api/"
 
     func latestMenu() -> SignalProducer<[String: AnyObject], APIError> {
-        let latestMenuUrl   = "https://todays-menu.herokuapp.com/api/v1/menus?limit=1"
+        let latestMenuUrl   = "\(baseUrl)v1/menus?limit=1"
         let request = Alamofire.request(.GET, latestMenuUrl, parameters: nil)
        
          return SignalProducer { observer, disposable in
@@ -46,7 +48,6 @@ struct TodaysMenuAPI: RemoteAPI {
                             return
                         }
                     
-                        print("menu downloaded")
                         observer.sendNext(JSON.first!)
                         observer.sendCompleted()
                     
@@ -60,7 +61,7 @@ struct TodaysMenuAPI: RemoteAPI {
     }
     
     func submitPushToken(token: String) -> SignalProducer<Void, APIError> {
-        let submitTokenUrl  = "https://todays-menu.herokuapp.com/api/v1/devices"
+        let submitTokenUrl  = "\(baseUrl)v1/devices"
         let tokenKey        = "token"
         let typeKey         = "type"
         let typeIosValue    = "ios"

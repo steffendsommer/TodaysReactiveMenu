@@ -11,15 +11,6 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
-//    let phoneService = PhoneService(menuStorage: MenuStorage())
-
-    override init() {
-        super.init()
-        
-        // Activate a `WCSession` for communicating with the iPhone.
-//        self.phoneService.startSession()
-    }
-
     func applicationDidFinishLaunching() {
         // Perform any final initialization of your application.
     }

@@ -7,16 +7,18 @@
 //
 
 import Foundation
+import UIKit
 import ReactiveCocoa
+import Result
 
 
-struct TodaysMenuViewModel {
+struct TodaysMenuViewModel: MVVMViewModelResource {
     
-    private let menuAPI: RemoteAPI
-    private var watchService: WatchService?
+    private let menuAPI: RemoteResource
     private let menuNotReadyMsg     = "The chef is working hard on getting Today's Menu ready. Please come back later."
     private let fetchMenuErrorMsg   = "Something went wrong in the kitchen. Please come back later."
     
+    let isActive                    = MutableProperty<Bool>(false)
     let headline                    = ConstantProperty<String>("Today's Menu")
     let subHeadline                 = ConstantProperty<String>("at\nUnwire")
     private let menu                = MutableProperty<Menu?>(nil)
@@ -30,13 +32,8 @@ struct TodaysMenuViewModel {
     
     // MARK: Object Life Cycle -
     
-    init(menuAPI: RemoteAPI) {
-        self.init(menuAPI: menuAPI, watchService: nil)
-    }
-    
-    init(menuAPI: RemoteAPI, watchService: WatchService?) {
+    init(menuAPI: RemoteResource) {
         self.menuAPI = menuAPI
-        self.watchService = watchService
         
         // Setup RAC bindings.
         self.setupBindings()
@@ -47,42 +44,40 @@ struct TodaysMenuViewModel {
     
     func setupBindings() {
         
-        // Handle view being active/inactive
-        let active = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationDidBecomeActiveNotification, object: nil)
-            .toSignalProducer()
-            .map { _ in
-                true
-            }
-        
-        let inactive = NSNotificationCenter.defaultCenter().rac_addObserverForName(UIApplicationWillResignActiveNotification, object: nil)
-            .toSignalProducer()
-            .map { _ in
-                false
-            }
-
-
-        let fetchMenu = Menu.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
-
-        let menuProducer = merge([active, inactive])
+        self.isActive.producer
             .filter { $0 }
             .mapError { _ in
                 return Menu.FetchMenuError.UnknownError
             }
             .flatMap(.Latest) { _ in
-                return fetchMenu
+                return Menu.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
             }
-            .replayLazily(1)
-        
+            .startWithSignal { signal, disposable in
+            
+                // Until https://github.com/ReactiveCocoa/ReactiveCocoa/issues/2728 gets fixed
+                // a more imperative approach is used.
+                signal.observe { event in
+                    switch event {
+                        case let .Next(fetchedMenu):
+                            self.menu.value = fetchedMenu
+                        case .Failed(_):
+                            self.mainCourse.value = self.fetchMenuErrorMsg
+                        default:
+                            break
+                    }
+                }
+            }
 
         // Make sure, we're only showing the menu when it's actually the menu of today.
-        self.shouldHideMenu <~ menuProducer
-            .ignoreError()
+        self.shouldHideMenu <~ self.menu.producer
+            .ignoreNil()
             .map { menu in
                 !menu.isTodaysMenu()
             }
 
         // Make sure to display some informative messages if the menu cannot be fetched.
-        self.mainCourse <~ menuProducer
+        self.mainCourse <~ self.menu.producer
+            .ignoreNil()
             .map { fetchedMenu in
                 if (fetchedMenu.isTodaysMenu()) {
                     return fetchedMenu.mainCourse!
@@ -94,15 +89,15 @@ struct TodaysMenuViewModel {
                 return SignalProducer<String, NoError>(value: self.fetchMenuErrorMsg)
             }
 
-        self.sides <~ menuProducer
-            .ignoreError()
+        self.sides <~ self.menu.producer
+            .ignoreNil()
             .map { menu in
                 menu.sides!
             }
         
         // Handle the showing of the cake banner.
-        let anyCake = menuProducer
-            .ignoreError()
+        let anyCake = self.menu.producer
+            .ignoreNil()
             .map { menu in
                 menu.cake!
             }
