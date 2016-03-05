@@ -14,7 +14,6 @@ import ReactiveCocoa
 class GlanceController: WKInterfaceController, MVVMViewResource {
 
     @IBOutlet var mainCourse: WKInterfaceLabel?
-    
     var viewModel = TodaysMenuViewModel(menuAPI: TodaysMenuAPI())
     
 
@@ -30,13 +29,15 @@ class GlanceController: WKInterfaceController, MVVMViewResource {
     // MARK: - RAC Bindings
     
     func setupBindings() {
-    
+        // Setup view helper bindings.
         self.setupViewBindings()
     
+        // Setup custom bindings.
         self.viewModel.mainCourse.producer
             .observeOn(UIScheduler())
             .startWithNext { mainCourse in
                 self.mainCourse?.setText(mainCourse)
         }
     }
+    
 }

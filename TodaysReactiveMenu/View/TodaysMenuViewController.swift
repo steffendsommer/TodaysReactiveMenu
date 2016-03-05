@@ -14,7 +14,6 @@ import ReactiveCocoa
 class TodaysMenuViewController: UIViewController, MVVMViewResource {
 
     var viewModel: TodaysMenuViewModel
-        
     private let mainColor       = UIColor(red: 73/255, green: 73/255, blue: 73/255, alpha: 1)
     private let headline        = UILabel()
     private let subHeadline     = UILabel()
@@ -139,8 +138,10 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
     // MARK: - RAC Bindings
     
     func setupBindings() {
+        // Setup view helper bindings.
         self.setupViewBindings()
     
+        // Setup custom bindings.
         self.headline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
         self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
         self.sides.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())

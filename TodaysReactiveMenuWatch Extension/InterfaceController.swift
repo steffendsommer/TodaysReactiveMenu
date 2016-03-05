@@ -16,7 +16,6 @@ class InterfaceController: WKInterfaceController, MVVMViewResource {
 
     @IBOutlet var mainCourse: WKInterfaceLabel?
     @IBOutlet var sides: WKInterfaceLabel?
-    
     var viewModel = TodaysMenuViewModel(menuAPI: TodaysMenuAPI())
 
     
@@ -32,20 +31,21 @@ class InterfaceController: WKInterfaceController, MVVMViewResource {
     // MARK: - RAC Bindings
     
     func setupBindings() {
-    
+        // Setup view helper bindings.
         self.setupViewBindings()
     
+        // Setup custom bindings.
         self.viewModel.mainCourse.producer
             .observeOn(UIScheduler())
             .startWithNext { mainCourse in
                 self.mainCourse?.setText(mainCourse)
-        }
+            }
         
-        self.viewModel.sides.producer
+        combineLatest(self.viewModel.sides.producer, self.viewModel.shouldHideMenu.producer)
             .observeOn(UIScheduler())
-            .startWithNext { sides in
-                self.sides?.setText(sides)
-        }
+            .startWithNext { sides, shouldHideMenu in
+                self.sides?.setText(shouldHideMenu ? "" : sides)
+            }
     }
 
 }
