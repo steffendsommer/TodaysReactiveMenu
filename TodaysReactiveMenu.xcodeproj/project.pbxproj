@@ -7,7 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F5637B9F7AE2911D8A36893 /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */; };
+		083133581606735FD3F5C2AF /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EB347426B3C99439B8B6184 /* Pods_TodaysReactiveMenuWatch_Extension.framework */; };
+		12A568F8B635A1697BE685AE /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 175F911B369275689189D876 /* Pods_TodaysReactiveMenu.framework */; };
+		3A1C108C1C8B78D200531AD2 /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C10881C8B78D200531AD2 /* MVVMViewModelResource.swift */; };
+		3A1C108D1C8B78D200531AD2 /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C10891C8B78D200531AD2 /* MVVMViewResource.swift */; };
+		3A1C108E1C8B78D200531AD2 /* MVVMViewResourceiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C108A1C8B78D200531AD2 /* MVVMViewResourceiOS.swift */; };
+		3A1C10901C8B790200531AD2 /* MVVMViewResourceWatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C108B1C8B78D200531AD2 /* MVVMViewResourceWatchOS.swift */; };
+		3A1C10911C8B793D00531AD2 /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C10891C8B78D200531AD2 /* MVVMViewResource.swift */; };
+		3A1C10921C8B794800531AD2 /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1C10881C8B78D200531AD2 /* MVVMViewModelResource.swift */; };
 		3A29EB281BB828B10053207C /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB261BB828B10053207C /* Interface.storyboard */; };
 		3A29EB2A1BB828B10053207C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A29EB291BB828B10053207C /* Assets.xcassets */; };
 		3A29EB311BB828B10053207C /* TodaysReactiveMenuWatch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3A29EB301BB828B10053207C /* TodaysReactiveMenuWatch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -20,9 +27,6 @@
 		3A29EB461BB828B10053207C /* TodaysReactiveMenuWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */; };
 		3A492DC51C57D72E0017209A /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A492DC71C57D87F0017209A /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
-		3A6ACB1C1C8877BA008D2838 /* MVVMViewResourceiOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */; };
-		3A6ACB1E1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */; };
-		3A6ACB1F1C887809008D2838 /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */; };
 		3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
 		3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
 		3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */; };
@@ -34,16 +38,12 @@
 		3A864CF31C870C8900C2FD2D /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
 		3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
 		3A864CF51C87246300C2FD2D /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
-		3A864CF71C87321000C2FD2D /* MVVMViewResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */; };
-		3A864CF91C87349100C2FD2D /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */; };
-		3A864CFA1C87363B00C2FD2D /* MVVMViewModelResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */; };
 		3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */; };
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
 		3AB0EE991B120DCD0065C13F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE971B120DCD0065C13F /* LaunchScreen.xib */; };
 		3AB0EEA51B120DCD0065C13F /* TodaysReactiveMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */; };
 		3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
-		55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */; };
-		CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */; };
+		BAD9FF9CBCBCC7316EA4B11E /* Pods_TodaysReactiveMenuTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A639FF0B2F96832870EE0D2A /* Pods_TodaysReactiveMenuTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +106,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
-		2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0755574AD05658E20005556B /* Pods-TodaysReactiveMenuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		175F911B369275689189D876 /* Pods_TodaysReactiveMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A1C10881C8B78D200531AD2 /* MVVMViewModelResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewModelResource.swift; sourceTree = "<group>"; };
+		3A1C10891C8B78D200531AD2 /* MVVMViewResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewResource.swift; sourceTree = "<group>"; };
+		3A1C108A1C8B78D200531AD2 /* MVVMViewResourceiOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewResourceiOS.swift; sourceTree = "<group>"; };
+		3A1C108B1C8B78D200531AD2 /* MVVMViewResourceWatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MVVMViewResourceWatchOS.swift; sourceTree = "<group>"; };
 		3A29EB241BB828B10053207C /* TodaysReactiveMenuWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TodaysReactiveMenuWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A29EB271BB828B10053207C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		3A29EB291BB828B10053207C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,16 +127,12 @@
 		3A29EB431BB828B10053207C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3A492DC41C57D72E0017209A /* Archivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archivable.swift; sourceTree = "<group>"; };
 		3A492DC61C57D87F0017209A /* Formattable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
-		3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResourceiOS.swift; path = ../View/MVVMViewResourceiOS.swift; sourceTree = "<group>"; };
-		3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResourceWatchOS.swift; path = "../../TodaysReactiveMenuWatch Extension/MVVMViewResourceWatchOS.swift"; sourceTree = "<group>"; };
 		3A7B52721B1306FF00C0F539 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		3A7B52761B13071700C0F539 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
 		3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewController.swift; sourceTree = "<group>"; };
 		3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewModel.swift; sourceTree = "<group>"; };
 		3A80207A1B602AD200AED403 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewResource.swift; path = ../View/MVVMViewResource.swift; sourceTree = "<group>"; };
-		3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVVMViewModelResource.swift; path = ../ViewModel/MVVMViewModelResource.swift; sourceTree = "<group>"; };
 		3AB0EE891B120DCD0065C13F /* Today's Menu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Today's Menu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AB0EE8D1B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -142,13 +142,13 @@
 		3AB0EEA31B120DCD0065C13F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AB0EEA41B120DCD0065C13F /* TodaysReactiveMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysReactiveMenuTests.swift; sourceTree = "<group>"; };
 		3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteResource.swift; sourceTree = "<group>"; };
-		3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
-		4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
-		5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
-		BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.release.xcconfig"; sourceTree = "<group>"; };
+		6EB347426B3C99439B8B6184 /* Pods_TodaysReactiveMenuWatch_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuWatch_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76E50835A2D7EAD2D484B6B9 /* Pods-TodaysReactiveMenu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.debug.xcconfig"; sourceTree = "<group>"; };
+		800AF2DE8E5BD84BC1D9B961 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		8892BC2FA7963AD3863C4869 /* Pods-TodaysReactiveMenuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests.release.xcconfig"; sourceTree = "<group>"; };
+		A287D09469B530489AA8C942 /* Pods-TodaysReactiveMenu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenu.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu.release.xcconfig"; sourceTree = "<group>"; };
+		A639FF0B2F96832870EE0D2A /* Pods_TodaysReactiveMenuTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodaysReactiveMenuTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3DCE96E18A6378F868CE4CC /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,7 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F5637B9F7AE2911D8A36893 /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */,
+				083133581606735FD3F5C2AF /* Pods_TodaysReactiveMenuWatch_Extension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,7 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD993281339459990EDD4A2A /* Pods_TodaysReactiveMenu.framework in Frameworks */,
+				12A568F8B635A1697BE685AE /* Pods_TodaysReactiveMenu.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F0E732BC11408D70458C55 /* Pods_TodaysReactiveMenuTests.framework in Frameworks */,
+				BAD9FF9CBCBCC7316EA4B11E /* Pods_TodaysReactiveMenuTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +186,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C2A80240348E9D4C2648A72 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				175F911B369275689189D876 /* Pods_TodaysReactiveMenu.framework */,
+				A639FF0B2F96832870EE0D2A /* Pods_TodaysReactiveMenuTests.framework */,
+				6EB347426B3C99439B8B6184 /* Pods_TodaysReactiveMenuWatch_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A1C10871C8B78D200531AD2 /* MVVMHelper */ = {
+			isa = PBXGroup;
+			children = (
+				3A1C10881C8B78D200531AD2 /* MVVMViewModelResource.swift */,
+				3A1C10891C8B78D200531AD2 /* MVVMViewResource.swift */,
+				3A1C108A1C8B78D200531AD2 /* MVVMViewResourceiOS.swift */,
+				3A1C108B1C8B78D200531AD2 /* MVVMViewResourceWatchOS.swift */,
+			);
+			path = MVVMHelper;
+			sourceTree = "<group>";
+		};
 		3A29EB251BB828B10053207C /* TodaysReactiveMenuWatch */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,17 +240,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3A6ACB201C888573008D2838 /* MVVMHelper */ = {
-			isa = PBXGroup;
-			children = (
-				3A864CF81C87349100C2FD2D /* MVVMViewModelResource.swift */,
-				3A864CF61C87321000C2FD2D /* MVVMViewResource.swift */,
-				3A6ACB1B1C8877BA008D2838 /* MVVMViewResourceiOS.swift */,
-				3A6ACB1D1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift */,
-			);
-			name = MVVMHelper;
-			sourceTree = "<group>";
-		};
 		3AB0EE801B120DCD0065C13F = {
 			isa = PBXGroup;
 			children = (
@@ -238,8 +248,8 @@
 				3A29EB251BB828B10053207C /* TodaysReactiveMenuWatch */,
 				3A29EB341BB828B10053207C /* TodaysReactiveMenuWatch Extension */,
 				3AB0EE8A1B120DCD0065C13F /* Products */,
-				D56F61A43ACA5F948319A354 /* Pods */,
-				A3A5D837DD33EC12E65964D0 /* Frameworks */,
+				7CC55380B043D57CB448EED4 /* Pods */,
+				1C2A80240348E9D4C2648A72 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -309,7 +319,7 @@
 		3AB0EEB11B120F840065C13F /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				3A6ACB201C888573008D2838 /* MVVMHelper */,
+				3A1C10871C8B78D200531AD2 /* MVVMHelper */,
 				3A7B52761B13071700C0F539 /* RACHelpers.swift */,
 				3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */,
 			);
@@ -332,25 +342,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A3A5D837DD33EC12E65964D0 /* Frameworks */ = {
+		7CC55380B043D57CB448EED4 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BE023256D3802D1984B7F121 /* Pods_TodaysReactiveMenu.framework */,
-				5AEB36F9D95371D2F64BFCE3 /* Pods_TodaysReactiveMenuTests.framework */,
-				C2F5130EDA58D8EA803AED96 /* Pods_TodaysReactiveMenuWatch_Extension.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D56F61A43ACA5F948319A354 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */,
-				3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */,
-				2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */,
-				E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */,
-				4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */,
-				62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */,
+				76E50835A2D7EAD2D484B6B9 /* Pods-TodaysReactiveMenu.debug.xcconfig */,
+				A287D09469B530489AA8C942 /* Pods-TodaysReactiveMenu.release.xcconfig */,
+				0755574AD05658E20005556B /* Pods-TodaysReactiveMenuTests.debug.xcconfig */,
+				8892BC2FA7963AD3863C4869 /* Pods-TodaysReactiveMenuTests.release.xcconfig */,
+				800AF2DE8E5BD84BC1D9B961 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */,
+				F3DCE96E18A6378F868CE4CC /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -380,12 +380,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A29EB4B1BB828B10053207C /* Build configuration list for PBXNativeTarget "TodaysReactiveMenuWatch Extension" */;
 			buildPhases = (
-				2393C6A759B9E52BF6B4F853 /* Check Pods Manifest.lock */,
+				A32F65A1EEE577165C150595 /* Check Pods Manifest.lock */,
 				3A29EB2C1BB828B10053207C /* Sources */,
 				3A29EB2D1BB828B10053207C /* Frameworks */,
 				3A29EB2E1BB828B10053207C /* Resources */,
-				6B0FB457EE0A535FBA92BE0A /* Embed Pods Frameworks */,
-				2A84FF0ABCA5CD9B6134E440 /* Copy Pods Resources */,
+				1632ED4634F6848EA509EA10 /* Embed Pods Frameworks */,
+				4A6C3F26C303000A9AA47209 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -400,15 +400,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB0EEA81B120DCE0065C13F /* Build configuration list for PBXNativeTarget "TodaysReactiveMenu" */;
 			buildPhases = (
-				1CB1DB59565B2C67E69FC592 /* Check Pods Manifest.lock */,
+				43BC0392D9260FECDC84ADFE /* Check Pods Manifest.lock */,
 				3AB0EE851B120DCD0065C13F /* Sources */,
 				3AB0EE861B120DCD0065C13F /* Frameworks */,
 				3AB0EE871B120DCD0065C13F /* Resources */,
 				3AB0EEC81B120FA30065C13F /* Embed Frameworks */,
 				3ABD432A1BE28E1900B13DC8 /* Fabric */,
 				3A29EB4E1BB828B10053207C /* Embed Watch Content */,
-				70DE92E8E77047CA3D2733F1 /* Embed Pods Frameworks */,
-				0250D9FFCF6355CCC3D83524 /* Copy Pods Resources */,
+				4C30295E5797C76CB634963E /* Embed Pods Frameworks */,
+				81076C61C4B6F35907573FCA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -424,12 +424,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3AB0EEAB1B120DCE0065C13F /* Build configuration list for PBXNativeTarget "TodaysReactiveMenuTests" */;
 			buildPhases = (
-				FB2FBEC65252C3AED8B6CC14 /* Check Pods Manifest.lock */,
+				3B42BFC5024369037121A681 /* Check Pods Manifest.lock */,
 				3AB0EE9A1B120DCD0065C13F /* Sources */,
 				3AB0EE9B1B120DCD0065C13F /* Frameworks */,
 				3AB0EE9C1B120DCD0065C13F /* Resources */,
-				601DBB3BBD2AAB067EF843B8 /* Embed Pods Frameworks */,
-				3CD182D52CDAB37EB7232D6C /* Copy Pods Resources */,
+				FC2ED98E03801F253994582D /* Embed Pods Frameworks */,
+				AC03AAB7A66AE6E9A882DBA7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -532,64 +532,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0250D9FFCF6355CCC3D83524 /* Copy Pods Resources */ = {
+		1632ED4634F6848EA509EA10 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1CB1DB59565B2C67E69FC592 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2393C6A759B9E52BF6B4F853 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2A84FF0ABCA5CD9B6134E440 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3ABD432A1BE28E1900B13DC8 /* Fabric */ = {
@@ -607,67 +562,7 @@
 			shellScript = "${PODS_ROOT}/Fabric/run 5f095c6cf69ef78431ca2b6d3acb22046943d86c 11eb32ecf282167f8f9da27a7c86c7df1529606c7847150cf5fa0138133cf88e";
 			showEnvVarsInLog = 0;
 		};
-		3CD182D52CDAB37EB7232D6C /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		601DBB3BBD2AAB067EF843B8 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6B0FB457EE0A535FBA92BE0A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		70DE92E8E77047CA3D2733F1 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB2FBEC65252C3AED8B6CC14 /* Check Pods Manifest.lock */ = {
+		3B42BFC5024369037121A681 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -682,6 +577,111 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		43BC0392D9260FECDC84ADFE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4A6C3F26C303000A9AA47209 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuWatch Extension/Pods-TodaysReactiveMenuWatch Extension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4C30295E5797C76CB634963E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		81076C61C4B6F35907573FCA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenu/Pods-TodaysReactiveMenu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A32F65A1EEE577165C150595 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AC03AAB7A66AE6E9A882DBA7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC2ED98E03801F253994582D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TodaysReactiveMenuTests/Pods-TodaysReactiveMenuTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -691,17 +691,17 @@
 			files = (
 				3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */,
 				3A864CF11C870C8400C2FD2D /* Archivable.swift in Sources */,
+				3A1C10901C8B790200531AD2 /* MVVMViewResourceWatchOS.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
 				3A29EB3A1BB828B10053207C /* ExtensionDelegate.swift in Sources */,
-				3A6ACB1E1C8877FA008D2838 /* MVVMViewResourceWatchOS.swift in Sources */,
-				3A864CFA1C87363B00C2FD2D /* MVVMViewModelResource.swift in Sources */,
 				3A864CF01C870C7900C2FD2D /* Menu.swift in Sources */,
 				3A29EB401BB828B10053207C /* ComplicationController.swift in Sources */,
 				3A29EB381BB828B10053207C /* InterfaceController.swift in Sources */,
 				3A864CF21C870C8600C2FD2D /* Formattable.swift in Sources */,
-				3A6ACB1F1C887809008D2838 /* MVVMViewResource.swift in Sources */,
 				3A864CF51C87246300C2FD2D /* TodaysMenuViewModel.swift in Sources */,
 				3A29EB3E1BB828B10053207C /* GlanceController.swift in Sources */,
+				3A1C10911C8B793D00531AD2 /* MVVMViewResource.swift in Sources */,
+				3A1C10921C8B794800531AD2 /* MVVMViewModelResource.swift in Sources */,
 				3A864CF31C870C8900C2FD2D /* RemoteResource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -711,14 +711,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */,
+				3A1C108D1C8B78D200531AD2 /* MVVMViewResource.swift in Sources */,
 				3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */,
-				3A864CF71C87321000C2FD2D /* MVVMViewResource.swift in Sources */,
-				3A864CF91C87349100C2FD2D /* MVVMViewModelResource.swift in Sources */,
-				3A6ACB1C1C8877BA008D2838 /* MVVMViewResourceiOS.swift in Sources */,
 				3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */,
+				3A1C108E1C8B78D200531AD2 /* MVVMViewResourceiOS.swift in Sources */,
 				3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */,
 				3A492DC51C57D72E0017209A /* Archivable.swift in Sources */,
 				3A492DC71C57D87F0017209A /* Formattable.swift in Sources */,
+				3A1C108C1C8B78D200531AD2 /* MVVMViewModelResource.swift in Sources */,
 				3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */,
 				3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */,
 				3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */,
@@ -778,7 +778,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_TESTABILITY = YES;
 				IBSC_MODULE = TodaysReactiveMenuWatch_Extension;
 				INFOPLIST_FILE = TodaysReactiveMenuWatch/Info.plist;
@@ -796,7 +795,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				IBSC_MODULE = TodaysReactiveMenuWatch_Extension;
 				INFOPLIST_FILE = TodaysReactiveMenuWatch/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.steffendsommer.todaysmenu.watchkitapp;
@@ -811,7 +809,7 @@
 		};
 		3A29EB491BB828B10053207C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C2F06797D8A52BFAC686684 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */;
+			baseConfigurationReference = 800AF2DE8E5BD84BC1D9B961 /* Pods-TodaysReactiveMenuWatch Extension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -831,7 +829,7 @@
 		};
 		3A29EB4A1BB828B10053207C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 62E5474249CDEFA4DC0BAD1C /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */;
+			baseConfigurationReference = F3DCE96E18A6378F868CE4CC /* Pods-TodaysReactiveMenuWatch Extension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -867,6 +865,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Steffen Sommer (788969GZZY)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -914,6 +913,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Steffen Damtoft Sommer (D6T77S259B)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -935,7 +935,7 @@
 		};
 		3AB0EEA91B120DCE0065C13F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 059F8CD3E944040E60E8E7DE /* Pods-TodaysReactiveMenu.debug.xcconfig */;
+			baseConfigurationReference = 76E50835A2D7EAD2D484B6B9 /* Pods-TodaysReactiveMenu.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -954,7 +954,7 @@
 		};
 		3AB0EEAA1B120DCE0065C13F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3C3F1EFFE60A092B3B6950EE /* Pods-TodaysReactiveMenu.release.xcconfig */;
+			baseConfigurationReference = A287D09469B530489AA8C942 /* Pods-TodaysReactiveMenu.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -973,7 +973,7 @@
 		};
 		3AB0EEAC1B120DCE0065C13F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F5417399792B4EB81052DC8 /* Pods-TodaysReactiveMenuTests.debug.xcconfig */;
+			baseConfigurationReference = 0755574AD05658E20005556B /* Pods-TodaysReactiveMenuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -990,7 +990,7 @@
 		};
 		3AB0EEAD1B120DCE0065C13F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E1B5355BE1F40F415FA75BFE /* Pods-TodaysReactiveMenuTests.release.xcconfig */;
+			baseConfigurationReference = 8892BC2FA7963AD3863C4869 /* Pods-TodaysReactiveMenuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = "";
