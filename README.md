@@ -12,7 +12,7 @@ The app uses **[CocoaPods](https://cocoapods.org)** for handling third-party dep
 ## Versions
 I'll include any major/minor version bumps:
 
-- **1.2**: 👯 Let there be POP! A lot has been refactored, and a lot of protocols and protocol extensions has been added. Watch app will not work without the phone.
+- **1.2**: 👯 Let there be POP! A lot has been refactored, and a lot of protocols and protocol extensions has been added. Watch app should now work without the phone.
 - **1.1**: ⌚️ Apple Watch support using watchOS 2.
 - **1.0**: Initial version. Supports RAC 4 and Swift 2.
 
