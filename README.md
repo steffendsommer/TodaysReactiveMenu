@@ -22,7 +22,7 @@ I have a lot of ideas for the project, here are some of the stuff I anticipate t
 - Add tests.
 - Add support for up-/down voting a menu.
 - Rewrite the UI logic.
-- Move backend to this repo and using Swift.
+- Make backend in Swift and move to this repo.
 
 ## Useful resources
 ReactiveCocoa 4 is, at the time of writing, still very new and because of that, the resources are limited. Here are some good places to get you started:
