@@ -16,7 +16,7 @@ I'll include any major/minor version bumps:
 - **1.1**: ⌚️ Apple Watch support using watchOS 2.
 - **1.0**: Initial version. Supports RAC 4 and Swift 2.
 
-## Roadmap
+## TODO
 I have a lot of ideas for the project, here are some of the stuff I anticipate to work on:
 
 - Add tests.
