@@ -19,8 +19,8 @@ class GlanceController: WKInterfaceController, MVVMViewResource {
 
     // MARK: - View Life Cycle
 
-    override init() {
-        super.init()
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
         self.setupBindings()
     }
@@ -37,7 +37,7 @@ class GlanceController: WKInterfaceController, MVVMViewResource {
             .observeOn(UIScheduler())
             .startWithNext { mainCourse in
                 self.mainCourse?.setText(mainCourse)
-        }
+            }
     }
     
 }
