@@ -13,23 +13,27 @@ import ReactiveCocoa
 
 extension MVVMViewResource where Self: WKInterfaceController {
     func setupViewBindings() {
-        let activeSelectorString = "willActivate"
-        let inactiveSelectorString = "didDeactivate"
     
         // Handle view being active/inactive
-        let active = self.rac_signalForSelector(Selector(activeSelectorString))
+        let active = self.rac_signalForSelector(#selector(willActivate))
             .toSignalProducer()
             .ignoreError()
             .map { _ in
                 return true
             }
+            .on(next: { _ in
+                print("active")
+            })
         
-        let inactive = self.rac_signalForSelector(Selector(inactiveSelectorString))
+        let inactive = self.rac_signalForSelector(#selector(didDeactivate))
             .toSignalProducer()
             .ignoreError()
             .map { _ in
                 false
             }
+            .on(next: { _ in
+                print("inactive")
+            })
         
         self.viewModel.isActive <~ merge([active, inactive])
     }

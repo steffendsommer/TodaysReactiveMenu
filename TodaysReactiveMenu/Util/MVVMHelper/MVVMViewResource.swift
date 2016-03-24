@@ -13,7 +13,7 @@ import ReactiveCocoa
 
 
 protocol MVVMViewResource {
-    typealias VM: MVVMViewModelResource
+    associatedtype VM: MVVMViewModelResource
     var viewModel: VM { get }
     func setupBindings()
 }
