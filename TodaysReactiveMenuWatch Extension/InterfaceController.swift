@@ -21,8 +21,8 @@ class InterfaceController: WKInterfaceController, MVVMViewResource {
     
     // MARK: - View Life Cycle
     
-    override init() {
-        super.init()
+    override func awakeWithContext(context: AnyObject?) {
+        super.awakeWithContext(context)
         
         self.setupBindings()
     }
