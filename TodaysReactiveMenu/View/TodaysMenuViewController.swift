@@ -9,6 +9,8 @@
 import UIKit
 import PureLayout
 import ReactiveCocoa
+import Result
+import Rex
 
 
 class TodaysMenuViewController: UIViewController, MVVMViewResource {
@@ -22,6 +24,7 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
     private let sides           = UILabel()
     private let cakeDayBanner   = UIView()
     private let cakeDayText     = UILabel()
+    private var likeButton      = UIButton(type: .System)
 
 
     // MARK: - Object Life Cycle
@@ -55,6 +58,7 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
         self.cakeDayBanner.transform = CGAffineTransformMakeRotation(CGFloat(-M_PI_4))
         self.view.addSubview(self.cakeDayBanner)
         self.cakeDayBanner.addSubview(self.cakeDayText)
+        self.view.addSubview(self.likeButton)
         
         setupConstraints()
     }
@@ -88,7 +92,7 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
 
         // Sides.
         self.sides.autoPinEdge(ALEdge.Top, toEdge: ALEdge.Bottom, ofView: self.logo, withOffset: 30)
-        self.sides.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: self.view, withOffset: -50)
+        self.sides.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: self.likeButton, withOffset: -30)
         self.sides.autoPinEdge(ALEdge.Left, toEdge: ALEdge.Left, ofView: self.view, withOffset: 50)
         self.sides.autoPinEdge(ALEdge.Right, toEdge: ALEdge.Right, ofView: self.view, withOffset: -50)
 
@@ -98,6 +102,10 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
         self.cakeDayBanner.autoSetDimensionsToSize(CGSize(width: 180, height: 30))
         self.cakeDayText.autoAlignAxisToSuperviewAxis(ALAxis.Horizontal)
         self.cakeDayText.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
+        
+        // Vote buttons.
+        self.likeButton.autoPinEdge(ALEdge.Bottom, toEdge: ALEdge.Bottom, ofView: self.view, withOffset: -30)
+        self.likeButton.autoAlignAxisToSuperviewAxis(ALAxis.Vertical)
     }
     
     override func viewDidLayoutSubviews() {
@@ -140,19 +148,21 @@ class TodaysMenuViewController: UIViewController, MVVMViewResource {
     func setupBindings() {
         // Setup view helper bindings.
         self.setupViewBindings()
-    
-        // Setup custom bindings.
-        self.headline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
-        self.subHeadline.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
-        self.sides.rac_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
-    
-        self.headline.rac_text <~ self.viewModel.headline.producer.observeOn(UIScheduler())
-        self.subHeadline.rac_text <~ self.viewModel.subHeadline.producer.observeOn(UIScheduler())
-        self.mainCourse.rac_text <~ self.viewModel.mainCourse.producer.observeOn(UIScheduler())
-        self.logo.rac_image <~ self.viewModel.logo.producer.observeOn(UIScheduler())
-        self.sides.rac_text <~ self.viewModel.sides.producer.observeOn(UIScheduler())
-        self.cakeDayBanner.rac_hidden <~ self.viewModel.isCakeServedToday.producer.observeOn(UIScheduler())
-        self.cakeDayText.rac_text <~ self.viewModel.cake.producer.observeOn(UIScheduler())
-    }
 
+        // Setup custom bindings.
+        self.headline.rex_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
+        self.subHeadline.rex_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
+        self.sides.rex_hidden <~ self.viewModel.shouldHideMenu.producer.observeOn(UIScheduler())
+
+        self.headline.rex_text <~ self.viewModel.headline.producer.observeOn(UIScheduler())
+        self.subHeadline.rex_text <~ self.viewModel.subHeadline.producer.observeOn(UIScheduler())
+        self.mainCourse.rex_text <~ self.viewModel.mainCourse.producer.observeOn(UIScheduler())
+        self.logo.rex_image <~ self.viewModel.logo.producer.observeOn(UIScheduler())
+        self.sides.rex_text <~ self.viewModel.sides.producer.observeOn(UIScheduler())
+        self.cakeDayBanner.rex_hidden <~ self.viewModel.isCakeServedToday.producer.observeOn(UIScheduler())
+        self.cakeDayText.rex_text <~ self.viewModel.cake.producer.observeOn(UIScheduler())
+
+        self.likeButton.setTitle("Like", forState: .Normal)
+        self.likeButton.rex_pressed <~ self.viewModel.likeAction.producer.ignoreNil().observeOn(UIScheduler())
+    }
 }

@@ -9,6 +9,7 @@
 import UIKit
 import Unbox
 import ReactiveCocoa
+import Result
 
 
 final class Menu: Unboxable, Archivable, Formattable {
@@ -26,6 +27,20 @@ final class Menu: Unboxable, Archivable, Formattable {
         return NSCalendar.currentCalendar().isDateInToday(self.servedAt!)
     }
    
+}
+
+
+// MARK: - Actions -
+
+extension Menu {
+
+    func like() -> Action<Void, Void, NoError> {
+        return Action { _ in
+            print("wohoo")
+            return SignalProducer<Void, NoError>.empty
+        }
+    }
+    
 }
 
 

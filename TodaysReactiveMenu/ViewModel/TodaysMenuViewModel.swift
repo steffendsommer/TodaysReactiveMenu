@@ -22,18 +22,22 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
     let headline                    = ConstantProperty<String>("Today's Menu")
     let subHeadline                 = ConstantProperty<String>("at\nUnwire")
     private let menu                = MutableProperty<Menu?>(nil)
-    let mainCourse                  = MutableProperty("")
+    private let wMainCourse         = MutableProperty("")
+    var mainCourse                  : AnyProperty<String>!
     let logo                        = ConstantProperty<UIImage?>(UIImage(named: "Logo"))
     let sides                       = MutableProperty<String>("")
     let cake                        = ConstantProperty<String>("CAKE DAY")
     let isCakeServedToday           = MutableProperty<Bool>(true)
     let shouldHideMenu              = MutableProperty<Bool>(true)
+    var likeAction                  = MutableProperty<CocoaAction?>(nil)
     
     
     // MARK: Object Life Cycle -
     
     init(menuAPI: RemoteResource) {
         self.menuAPI = menuAPI
+        
+        self.mainCourse = AnyProperty(self.wMainCourse)
         
         // Setup RAC bindings.
         self.setupBindings()
@@ -61,7 +65,7 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
                         case let .Next(fetchedMenu):
                             self.menu.value = fetchedMenu
                         case .Failed(_):
-                            self.mainCourse.value = self.fetchMenuErrorMsg
+                            self.wMainCourse.value = self.fetchMenuErrorMsg
                         default:
                             break
                     }
@@ -69,14 +73,14 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
             }
 
         // Make sure, we're only showing the menu when it's actually the menu of today.
-        self.shouldHideMenu <~ self.menu.producer
+        self.shouldHideMenu <~ self.menu.signal
             .ignoreNil()
             .map { menu in
                 !menu.isTodaysMenu()
             }
 
         // Make sure to display some informative messages if the menu cannot be fetched.
-        self.mainCourse <~ self.menu.producer
+        self.wMainCourse <~ self.menu.signal
             .ignoreNil()
             .map { fetchedMenu in
                 if (fetchedMenu.isTodaysMenu()) {
@@ -89,24 +93,29 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
                 return SignalProducer<String, NoError>(value: self.fetchMenuErrorMsg)
             }
 
-        self.sides <~ self.menu.producer
+        self.sides <~ self.menu.signal
             .ignoreNil()
             .map { menu in
                 menu.sides!
             }
         
         // Handle the showing of the cake banner.
-        let anyCake = self.menu.producer
+        let anyCake = self.menu.signal
             .ignoreNil()
             .map { menu in
                 menu.cake!
             }
 
-        self.isCakeServedToday <~ combineLatest(self.shouldHideMenu.producer, anyCake)
+        self.isCakeServedToday <~ combineLatest(self.shouldHideMenu.signal, anyCake)
             .map { shouldHideMenu, cakeToday in
                 shouldHideMenu || !cakeToday
             }
 
+        self.likeAction <~ self.menu.signal
+            .ignoreNil()
+            .map { menu in
+                return CocoaAction(menu.like(), input: ())
+            }
     }
 
 }

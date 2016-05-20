@@ -27,15 +27,17 @@ protocol Formattable {
 extension Formattable where Self: Unboxable {
 
     static func deserializeFromJSON(JSON: [String: AnyObject]) -> SignalProducer<Self, FormattableError> {
+        
         return SignalProducer { observer, disposable in
-            guard let instance: Self = Unbox(JSON) else {
+            
+            do {
+                let instance: Self = try Unbox(JSON)
+                observer.sendNext(instance)
+                observer.sendCompleted()
+            } catch {
                 observer.sendFailed(FormattableError.DeserializationFailed)
-                return
             }
             
-            observer.sendNext(instance)
-            observer.sendCompleted()
         }
     }
-
 }

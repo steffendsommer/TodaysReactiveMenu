@@ -9,6 +9,7 @@
 import Foundation
 import WatchKit
 import ReactiveCocoa
+import Rex
 
 
 extension MVVMViewResource where Self: WKInterfaceController {
@@ -35,6 +36,7 @@ extension MVVMViewResource where Self: WKInterfaceController {
                 print("inactive")
             })
         
-        self.viewModel.isActive <~ merge([active, inactive])
+        self.viewModel.isActive <~ SignalProducer(values: [active, inactive])
+            .flatten(.Merge)
     }
 }

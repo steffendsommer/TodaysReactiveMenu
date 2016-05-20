@@ -28,15 +28,12 @@
 		3A492DC51C57D72E0017209A /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A492DC71C57D87F0017209A /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
 		3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
-		3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
-		3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */; };
 		3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */; };
 		3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
 		3A864CF01C870C7900C2FD2D /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52721B1306FF00C0F539 /* Menu.swift */; };
 		3A864CF11C870C8400C2FD2D /* Archivable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC41C57D72E0017209A /* Archivable.swift */; };
 		3A864CF21C870C8600C2FD2D /* Formattable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A492DC61C57D87F0017209A /* Formattable.swift */; };
 		3A864CF31C870C8900C2FD2D /* RemoteResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC7C2AC1C593F61008A4B3F /* RemoteResource.swift */; };
-		3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B52761B13071700C0F539 /* RACHelpers.swift */; };
 		3A864CF51C87246300C2FD2D /* TodaysMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */; };
 		3AB0EE8F1B120DCD0065C13F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AB0EE8E1B120DCD0065C13F /* AppDelegate.swift */; };
 		3AB0EE961B120DCD0065C13F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AB0EE951B120DCD0065C13F /* Images.xcassets */; };
@@ -128,8 +125,6 @@
 		3A492DC41C57D72E0017209A /* Archivable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Archivable.swift; sourceTree = "<group>"; };
 		3A492DC61C57D87F0017209A /* Formattable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Formattable.swift; sourceTree = "<group>"; };
 		3A7B52721B1306FF00C0F539 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
-		3A7B52761B13071700C0F539 /* RACHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RACHelpers.swift; sourceTree = "<group>"; };
-		3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		3A7B527A1B13072900C0F539 /* TodaysMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewController.swift; sourceTree = "<group>"; };
 		3A7B527C1B13073000C0F539 /* TodaysMenuViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodaysMenuViewModel.swift; sourceTree = "<group>"; };
 		3A80207A1B602AD200AED403 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -320,8 +315,6 @@
 			isa = PBXGroup;
 			children = (
 				3A1C10871C8B78D200531AD2 /* MVVMHelper */,
-				3A7B52761B13071700C0F539 /* RACHelpers.swift */,
-				3A7B52781B13071D00C0F539 /* UIKitExtensions.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -689,7 +682,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A864CF41C870F3700C2FD2D /* RACHelpers.swift in Sources */,
 				3A864CF11C870C8400C2FD2D /* Archivable.swift in Sources */,
 				3A1C10901C8B790200531AD2 /* MVVMViewResourceWatchOS.swift in Sources */,
 				3A29EB3C1BB828B10053207C /* NotificationController.swift in Sources */,
@@ -710,7 +702,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A7B52771B13071700C0F539 /* RACHelpers.swift in Sources */,
 				3A1C108D1C8B78D200531AD2 /* MVVMViewResource.swift in Sources */,
 				3A7B52731B1306FF00C0F539 /* Menu.swift in Sources */,
 				3A7B527D1B13073000C0F539 /* TodaysMenuViewModel.swift in Sources */,
@@ -720,7 +711,6 @@
 				3A492DC71C57D87F0017209A /* Formattable.swift in Sources */,
 				3A1C108C1C8B78D200531AD2 /* MVVMViewModelResource.swift in Sources */,
 				3AC7C2AD1C593F61008A4B3F /* RemoteResource.swift in Sources */,
-				3A7B52791B13071D00C0F539 /* UIKitExtensions.swift in Sources */,
 				3A7B527B1B13072900C0F539 /* TodaysMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

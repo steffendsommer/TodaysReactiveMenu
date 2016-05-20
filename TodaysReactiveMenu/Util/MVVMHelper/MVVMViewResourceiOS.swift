@@ -23,6 +23,7 @@ extension MVVMViewResource where Self: UIViewController {
                 false
             }
         
-        self.viewModel.isActive <~ merge([active, inactive])
+        self.viewModel.isActive <~ SignalProducer(values: [active, inactive])
+            .flatten(.Merge)
     }
 }
