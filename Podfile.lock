@@ -1,44 +1,29 @@
 PODS:
-  - Alamofire (3.4.0)
   - Crashlytics (3.4.1):
     - Fabric (~> 1.6.0)
   - Fabric (1.6.1)
   - PureLayout (3.0.1)
-  - ReactiveCocoa (4.1.0):
-    - ReactiveCocoa/UI (= 4.1.0)
+  - ReactiveCocoa (4.2.1):
     - Result (~> 2.0)
-  - ReactiveCocoa/Core (4.1.0):
-    - ReactiveCocoa/no-arc
-    - Result (~> 2.0)
-  - ReactiveCocoa/no-arc (4.1.0):
-    - Result (~> 2.0)
-  - ReactiveCocoa/UI (4.1.0):
-    - ReactiveCocoa/Core
-    - Result (~> 2.0)
-  - Result (2.0.0)
-  - Rex (0.10.0):
-    - ReactiveCocoa (~> 4.1)
-  - Unbox (1.5.2)
+  - Result (2.1.3)
+  - Rex (0.11.0):
+    - ReactiveCocoa (~> 4.2.1)
 
 DEPENDENCIES:
-  - Alamofire (~> 3.4.0)
   - Crashlytics
   - Fabric
   - PureLayout (~> 3.0.1)
-  - ReactiveCocoa (= 4.1.0)
-  - Rex (~> 0.10.0)
-  - Unbox (~> 1.5.2)
+  - ReactiveCocoa (= 4.2.1)
+  - Rex (~> 0.11.0)
 
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
   Crashlytics: 41574a245bc6ae10c55d57f385ebd2004e5bee05
   Fabric: bf0ceb04e7c924090efc5f8c55e4fbcca189e0a0
   PureLayout: f35f5384c9c4e4479df041dbe33ad7577b71ddfb
-  ReactiveCocoa: d70004d7a366a7b8e87e60ce2347182c77701949
-  Result: 9e75e1111c774c6ac594e14907b15057053a7959
-  Rex: e7e002297c0eee11e57b20177151f758e91741ad
-  Unbox: 0f7ceadef75771fd0ca5caa73cbba02a21a30a28
+  ReactiveCocoa: 5a42745f11ea236f405bb9ce5e97c5e3b23562dd
+  Result: 18e1a7597fbcca5923c565b40a25a98afafdee02
+  Rex: bf8044fc6d2938c5dc24c73d4c0689b68f6d107a
 
-PODFILE CHECKSUM: 9becf0b68934adb3d9bbd68bd7f0e01912902feb
+PODFILE CHECKSUM: de3eff1150eeb9e77a159d90b07a93fefdcb6c9a
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.0.1

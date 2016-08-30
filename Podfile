@@ -4,10 +4,8 @@ use_frameworks!
 inhibit_all_warnings!
 
 def shared_pods
-    pod 'ReactiveCocoa', '4.1.0'
-    pod 'Alamofire', '~> 3.4.0'
-    pod 'Unbox', '~> 1.5.2'
-    pod 'Rex', '~> 0.10.0'
+    pod 'ReactiveCocoa', '4.2.1'
+    pod 'Rex', '~> 0.11.0'
 end
 
 target 'TodaysReactiveMenu' do
