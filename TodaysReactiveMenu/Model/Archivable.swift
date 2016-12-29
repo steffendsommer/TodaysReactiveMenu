@@ -16,18 +16,32 @@ enum ArchivableError: ErrorType {
     case LoadFailed
 }
 
-
 protocol Archivable {
     func saveUsingIdentifier(identifier: String) -> SignalProducer<Void, ArchivableError>
     static func loadUsingIdentifier(identifier: String) -> SignalProducer<Self, ArchivableError>
 }
 
 // Extension for NSUserDefaults.
-extension Archivable where Self: Formattable {
+extension Archivable where Self: JsonFormattable {
+
+//    static func loadUsingIdentifier(identifier: String) -> SignalProducer<Self, ArchivableError> {
+//        return SignalProducer { observer, disposable in
+//            guard let data = NSUserDefaults.standardUserDefaults().objectForKey(identifier) as? [String: AnyObject] else {
+//                observer.sendFailed(ArchivableError.ValueNotFound)
+//                return
+//            }
+//
+//            observer.sendNext(data)
+//            observer.sendCompleted()
+//        }
+//        .flatMap(.Latest) { value in
+//            Self.fromJson(value)
+//        }
+//    }
 
     func saveUsingIdentifier(identifier: String) -> SignalProducer<Void, ArchivableError> {
     
-        return self.serialize()
+        return self.toJson()
             .on(next: { value in
                 NSUserDefaults.standardUserDefaults().setObject(value, forKey: identifier)
             })
@@ -44,7 +58,7 @@ extension Archivable where Self: Formattable {
     
         return SignalProducer { observer, disposable in
             guard let data = NSUserDefaults.standardUserDefaults().objectForKey(identifier) as? [String: AnyObject] else {
-                observer.sendFailed(ArchivableError.ValueNotFound)
+//                observer.sendFailed(ArchivableError.ValueNotFound) TODO: WHY?
                 return
             }
             
@@ -52,12 +66,12 @@ extension Archivable where Self: Formattable {
             observer.sendCompleted()
         }
         .flatMap(.Latest) { value in
-            return Self.deserializeFromJSON(value)
+            return Self.fromJson(value)
                 .mapError { error in
                     return ArchivableError.LoadFailed
                 }
         }
-        
+
     }
 
 }

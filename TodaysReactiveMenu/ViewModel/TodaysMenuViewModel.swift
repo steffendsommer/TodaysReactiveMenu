@@ -51,10 +51,10 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
         self.isActive.producer
             .filter { $0 }
             .mapError { _ in
-                return Menu.FetchMenuError.UnknownError
+                return MenuDataManager.FetchMenuError.UnknownError
             }
             .flatMap(.Latest) { _ in
-                return Menu.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
+                return MenuDataManager.fetchTodaysMenuFromCacheOrRemote(self.menuAPI)
             }
             .startWithSignal { signal, disposable in
             
@@ -84,7 +84,7 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
             .ignoreNil()
             .map { fetchedMenu in
                 if (fetchedMenu.isTodaysMenu()) {
-                    return fetchedMenu.mainCourse!
+                    return fetchedMenu.mainCourse
                 } else {
                     return self.menuNotReadyMsg
                 }
@@ -96,14 +96,14 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
         self.sides <~ self.menu.signal
             .ignoreNil()
             .map { menu in
-                menu.sides!
+                menu.sides
             }
         
         // Handle the showing of the cake banner.
         let anyCake = self.menu.signal
             .ignoreNil()
             .map { menu in
-                menu.cake!
+                menu.cake
             }
 
         self.isCakeServedToday <~ combineLatest(self.shouldHideMenu.signal, anyCake)
@@ -111,11 +111,11 @@ struct TodaysMenuViewModel: MVVMViewModelResource {
                 shouldHideMenu || !cakeToday
             }
 
-        self.likeAction <~ self.menu.signal
-            .ignoreNil()
-            .map { menu in
-                return CocoaAction(menu.like(), input: ())
-            }
+//        self.likeAction <~ self.menu.signal
+//            .ignoreNil()
+//            .map { menu in
+//                return CocoaAction(menu.like(), input: ())
+//            }
     }
 
 }

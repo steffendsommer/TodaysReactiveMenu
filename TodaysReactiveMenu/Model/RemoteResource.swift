@@ -8,14 +8,37 @@
 
 import Foundation
 import ReactiveCocoa
-import Alamofire
-
 
 #if DEBUG
     private let env = "sandbox"
 #else
     private let env = "production"
 #endif
+
+
+protocol WebResourceType {
+    associatedtype T: Any
+    var url: NSURL { get }
+    var parse: (NSData -> T?)? { get }
+}
+
+struct WebResource<T>: WebResourceType {
+    let url: NSURL
+    let parse: (NSData -> T?)?
+}
+
+extension WebResource {
+    init(url: NSURL, parseJSON: AnyObject -> T?) {
+        self.url = url
+        self.parse = { data in
+            let json = try? NSJSONSerialization.JSONObjectWithData(data, options: [])
+            return json.flatMap(parseJSON)
+        }
+    }
+}
+
+
+
 
 
 enum APIError: ErrorType {
